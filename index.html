@@ -229,7 +229,7 @@
           Gestion réseau et compatibilité multi-casques.</p>
         </div>
         <div class="project" data-id="hainedjinn">
-          <h3>hainedjinn Engine</h3>
+          <h3>HaineDjinn Engine</h3>
           <p>Moteur de jeu OpenGL créé de zéro.  
           Architecture, optimisation, rendu et système de shaders.</p>
         </div>
@@ -257,7 +257,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer id="footer">
     © 2025 Maxence Retier — Portfolio créé avec Github.
   </footer>
 
@@ -325,81 +325,80 @@
     });
 
     /* === TRADUCTION === */
-    const langBtn = document.getElementById("langBtn");
-    let currentLang = "fr";
-    const translations = {
-  en: {
-    bio: "Passionate about video game development, graduated from Isart Digital in Game Programming. I have two years of experience working on immersive 3D, VR and AR projects. I love designing innovative and fun-to-play experiences where technology meets creativity.",
-    projectsTitle: "🕹️ Projects",
-    expTitle: "💼 Experiences",
-    contactTitle: "📫 Contact",
-    footer: "© 2025 Maxence Retier — Portfolio made with Github.",
-    langBtn: "Français 🇫🇷",
-    exp: [
-      "<b>Orbital Views</b> — 3D Developer (2023–2025)<br>Rendering optimization, gameplay development, R&D of new technologies.",
-      "<b>Tkorp</b> — VR/AR Developer (2023)<br>VR/AR research, multiplayer netcode, cross-platform management.",
-      "<b>WWF</b> — Video Game Communication (2021)<br>Study on visibility and donations in the gaming world."
-    ],
-    projects: {
-      raymarching: "3D glass visualization using raymarching and compute shaders (Vulkan). Collaboration with LORIA, real-time rendering with transparency/reflection effects. <a href='https://github.com/Raymarching-PFE/Physicated_Raymarching' target='_blank'>View on GitHub →</a>",
-      parallax: "OpenGL engine and Parallax Mapping shader developed from scratch. <a href='https://github.com/xarmy7/ParallaxMapping' target='_blank'>View on GitHub →</a>",
-      scout: "Final-year game project made with 19 people. AI in C++, production tools, custom shaders. <a href='https://isart-digital.itch.io/what-the-scout' target='_blank'>View on itch.io →</a>",
-      padel: "Local multiplayer VR game (Unity + Mirror). Network management and multi-headset support.",
-      hainedjinn: "OpenGL game engine built from scratch. Architecture, optimization, rendering, and shader system."
+    document.addEventListener("DOMContentLoaded", () => {
+  const langBtn = document.getElementById("langBtn");
+  let currentLang = "fr";
+  const translations = {
+    en: {
+      bio: "Passionate about video game development, graduated from Isart Digital in Game Programming. I have two years of experience working on immersive 3D, VR and AR projects. I love designing innovative and fun-to-play experiences where technology meets creativity.",
+      projectsTitle: "🕹️ Projects",
+      expTitle: "💼 Experiences",
+      contactTitle: "📫 Contact",
+      footer: "© 2025 Maxence Retier — Portfolio made with Github.",
+      langBtn: "Français 🇫🇷",
+      exp: [
+        "<b>Orbital Views</b> — 3D Developer (2023–2025)<br>Rendering optimization, gameplay development, R&D of new technologies.",
+        "<b>Tkorp</b> — VR/AR Developer (2023)<br>VR/AR research, multiplayer netcode, cross-platform management.",
+        "<b>WWF</b> — Video Game Communication (2021)<br>Study on visibility and donations in the gaming world."
+      ],
+      projects: {
+        raymarching: "3D glass visualization using raymarching and compute shaders (Vulkan). Collaboration with LORIA, real-time rendering with transparency/reflection effects. <a href='https://github.com/Raymarching-PFE/Physicated_Raymarching' target='_blank'>View on GitHub →</a>",
+        parallax: "OpenGL engine and Parallax Mapping shader developed from scratch. <a href='https://github.com/xarmy7/ParallaxMapping' target='_blank'>View on GitHub →</a>",
+        scout: "Final-year game project made with 19 people. AI in C++, production tools, custom shaders. <a href='https://isart-digital.itch.io/what-the-scout' target='_blank'>View on itch.io →</a>",
+        padel: "Local multiplayer VR game (Unity + Mirror). Network management and multi-headset support.",
+        hainedjinn: "OpenGL game engine built from scratch. Architecture, optimization, rendering, and shader system."
+      }
+    },
+    fr: {
+      bio: "Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming, je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR. J’aime concevoir des expériences innovantes et fun à jouer, où la technique rencontre la créativité.",
+      projectsTitle: "🕹️ Projets",
+      expTitle: "💼 Expériences",
+      contactTitle: "📫 Contact",
+      footer: "© 2025 Maxence Retier — Portfolio créé avec Github.",
+      langBtn: "English 🇬🇧",
+      exp: [
+        "<b>Orbital Views</b> — Développeur 3D (2023–2025)<br>Optimisation de rendu, gameplay, R&D de nouvelles technologies.",
+        "<b>Tkorp</b> — Développeur VR/AR (2023)<br>R&D VR/AR, Netcode multijoueur, gestion cross-platform.",
+        "<b>WWF</b> — Communication jeu vidéo (2021)<br>Étude sur la visibilité et les dons dans le monde du jeu vidéo."
+      ],
+      projects: {
+        raymarching: "Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan). Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion. <a href='https://github.com/Raymarching-PFE/Physicated_Raymarching' target='_blank'>Voir sur GitHub →</a>",
+        parallax: "OpenGL engine et shader de Parallax Mapping développés from scratch. <a href='https://github.com/xarmy7/ParallaxMapping' target='_blank'>Voir sur GitHub →</a>",
+        scout: "Jeu de fin d’étude réalisé avec 19 personnes. IA en C++, outils de production, shaders personnalisés. <a href='https://isart-digital.itch.io/what-the-scout' target='_blank'>Voir sur itch.io →</a>",
+        padel: "Jeu VR multijoueur local (Unity + Mirror). Gestion réseau et compatibilité multi-casques.",
+        hainedjinn: "Moteur de jeu OpenGL créé de zéro. Architecture, optimisation, rendu et système de shaders."
+      }
     }
-  },
-  fr: {
-    bio: "Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming, je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR. J’aime concevoir des expériences innovantes et fun à jouer, où la technique rencontre la créativité.",
-    projectsTitle: "🕹️ Projets",
-    expTitle: "💼 Expériences",
-    contactTitle: "📫 Contact",
-    footer: "© 2025 Maxence Retier — Portfolio créé avec Github.",
-    langBtn: "English 🇬🇧",
-    exp: [
-      "<b>Orbital Views</b> — Développeur 3D (2023–2025)<br>Optimisation de rendu, gameplay, R&D de nouvelles technologies.",
-      "<b>Tkorp</b> — Développeur VR/AR (2023)<br>R&D VR/AR, Netcode multijoueur, gestion cross-platform.",
-      "<b>WWF</b> — Communication jeu vidéo (2021)<br>Étude sur la visibilité et les dons dans le monde du jeu vidéo."
-    ],
-    projects: {
-      raymarching: "Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan). Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion. <a href='https://github.com/Raymarching-PFE/Physicated_Raymarching' target='_blank'>Voir sur GitHub →</a>",
-      parallax: "OpenGL engine et shader de Parallax Mapping développés from scratch. <a href='https://github.com/xarmy7/ParallaxMapping' target='_blank'>Voir sur GitHub →</a>",
-      scout: "Jeu de fin d’étude réalisé avec 19 personnes. IA en C++, outils de production, shaders personnalisés. <a href='https://isart-digital.itch.io/what-the-scout' target='_blank'>Voir sur itch.io →</a>",
-      padel: "Jeu VR multijoueur local (Unity + Mirror). Gestion réseau et compatibilité multi-casques.",
-      hainedjinn: "Moteur de jeu OpenGL créé de zéro. Architecture, optimisation, rendu et système de shaders."
-    }
-  }
-};
+  };
 
-    langBtn.addEventListener("click", () => {
-  currentLang = currentLang === "fr" ? "en" : "fr";
-  const t = translations[currentLang];
+  langBtn.addEventListener("click", () => {
+    currentLang = currentLang === "fr" ? "en" : "fr";
+    const t = translations[currentLang];
 
-  // Bio et titres
-  document.getElementById("bio").innerHTML = `<p>${t.bio}</p>`;
-  document.getElementById("projects-title").textContent = t.projectsTitle;
-  document.getElementById("exp-title").textContent = t.expTitle;
-  document.getElementById("contact-title").textContent = t.contactTitle;
-  document.getElementById("footer").textContent = t.footer;
-  langBtn.textContent = t.langBtn;
+    // Bio et titres
+    document.getElementById("bio").innerHTML = `<p>${t.bio}</p>`;
+    document.getElementById("projects-title").textContent = t.projectsTitle;
+    document.getElementById("exp-title").textContent = t.expTitle;
+    document.getElementById("contact-title").textContent = t.contactTitle;
+    document.getElementById("footer").textContent = t.footer;
+    langBtn.textContent = t.langBtn;
 
-  // Expériences
-  const expItems = document.querySelectorAll("#exp li");
-  expItems.forEach((li, i) => {
-    if(t.exp[i]) li.innerHTML = t.exp[i];
-  });
-
-  // Projets
-  const projectItems = document.querySelectorAll(".project");
-  projectItems.forEach(project => {
-    const id = project.dataset.id.toLowerCase(); // <-- forcer en minuscules
-    const projects = {};
-    // Créer un objet avec toutes les clés en minuscules pour correspondance
-    Object.keys(t.projects).forEach(key => {
-      projects[key.toLowerCase()] = t.projects[key];
+    // Expériences
+    const expItems = document.querySelectorAll("#exp li");
+    expItems.forEach((li, i) => {
+      if (t.exp[i]) li.innerHTML = t.exp[i];
     });
-    if(projects[id]) {
-      project.querySelector("p").innerHTML = projects[id];
-    }
+
+    // Projets
+    const projectItems = document.querySelectorAll(".project");
+    projectItems.forEach(project => {
+      const id = project.dataset.id.toLowerCase();
+      const projects = {};
+      Object.keys(t.projects).forEach(key => {
+        projects[key.toLowerCase()] = t.projects[key];
+      });
+      if (projects[id]) project.querySelector("p").innerHTML = projects[id];
+    });
   });
 });
   </script>
