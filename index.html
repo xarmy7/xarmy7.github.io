@@ -336,14 +336,17 @@
         footer: "© 2025 Maxence Retier — Portfolio made with Github.",
         langBtn: "Français 🇫🇷",
         exp: [
-          "<b>Orbital Views</b> — 3D Developer (2023–2025)<br>Rendering optimization, gameplay development, R&D of new technologies.",
-          "<b>Tkorp</b> — VR/AR Developer (2023)<br>VR/AR research, multiplayer netcode, cross-platform management."
-        ],
+    "<b>Orbital Views</b> — 3D Developer (2023–2025)<br>Rendering optimization, gameplay development, R&D of new technologies.",
+    "<b>Tkorp</b> — VR/AR Developer (2023)<br>VR/AR research, multiplayer netcode, cross-platform management.",
+    "<b>WWF</b> — Video Game Communication (2021)<br>Study on visibility and donations in the gaming world."
+  ],
         projects: {
-          raymarching: "3D glass visualization using raymarching and compute shaders (Vulkan). Collaboration with LORIA, real-time rendering with transparency/reflection effects. <a href='https://github.com/Raymarching-PFE/Physicated_Raymarching' target='_blank'>View on GitHub →</a>",
-          parallax: "OpenGL engine and Parallax Mapping shader developed from scratch. <a href='https://github.com/xarmy7/ParallaxMapping' target='_blank'>View on GitHub →</a>",
-          scout: "Final-year game project made with 19 people. AI in C++, production tools, custom shaders. <a href='https://isart-digital.itch.io/what-the-scout' target='_blank'>View on itch.io →</a>"
-        }
+    raymarching: "3D glass visualization using raymarching and compute shaders (Vulkan). Collaboration with LORIA, real-time rendering with transparency/reflection effects. <a href='https://github.com/Raymarching-PFE/Physicated_Raymarching' target='_blank'>View on GitHub →</a>",
+    parallax: "OpenGL engine and Parallax Mapping shader developed from scratch. <a href='https://github.com/xarmy7/ParallaxMapping' target='_blank'>View on GitHub →</a>",
+    scout: "Final-year game project made with 19 people. AI in C++, production tools, custom shaders. <a href='https://isart-digital.itch.io/what-the-scout' target='_blank'>View on itch.io →</a>",
+    padel: "Local multiplayer VR game (Unity + Mirror). Network management and multi-headset support.",
+    HaineDjinn: "OpenGL game engine built from scratch. Architecture, optimization, rendering, and shader system."
+  }
       },
       fr: {
         bio: "Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming, je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR. J’aime concevoir des expériences innovantes et fun à jouer, où la technique rencontre la créativité.",
@@ -364,7 +367,7 @@
       }
     };
 
-    langBtn.addEventListener("click", () => {
+    /*langBtn.addEventListener("click", () => {
       currentLang = currentLang === "fr" ? "en" : "fr";
       const t = translations[currentLang];
       document.getElementById("bio").innerHTML = `<p>${t.bio}</p>`;
@@ -378,7 +381,35 @@
       document.querySelector("[data-id='raymarching'] p").innerHTML = t.projects.raymarching;
       document.querySelector("[data-id='parallax'] p").innerHTML = t.projects.parallax;
       document.querySelector("[data-id='scout'] p").innerHTML = t.projects.scout;
-    });
+    });*/
+
+    langBtn.addEventListener("click", () => {
+  currentLang = currentLang === "fr" ? "en" : "fr";
+  const t = translations[currentLang];
+
+  // Bio et titres
+  document.getElementById("bio").innerHTML = `<p>${t.bio}</p>`;
+  document.getElementById("projects-title").textContent = t.projectsTitle;
+  document.getElementById("exp-title").textContent = t.expTitle;
+  document.getElementById("contact-title").textContent = t.contactTitle;
+  document.getElementById("footer").textContent = t.footer;
+  langBtn.textContent = t.langBtn;
+
+  // Expériences
+  const expItems = document.querySelectorAll("#exp li");
+  expItems.forEach((li, i) => {
+    if(t.exp[i]) li.innerHTML = t.exp[i];
+  });
+
+  // Projets
+  const projectItems = document.querySelectorAll(".project");
+  projectItems.forEach(project => {
+    const id = project.dataset.id;
+    if(t.projects[id]) {
+      project.querySelector("p").innerHTML = t.projects[id];
+    }
+  });
+});
   </script>
 
 </body>
