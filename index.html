@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maxence Retier | Game Developer</title>
   <style>
-    /* === RESET & THEME === */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
@@ -16,12 +15,24 @@
       align-items: center;
       min-height: 100vh;
       padding: 0 1rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* === CANVAS BACKGROUND === */
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at center, #0d1117 0%, #010409 100%);
     }
 
     a { color: #58a6ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* === HEADER === */
     header {
       text-align: center;
       margin-top: 80px;
@@ -50,7 +61,6 @@
       color: #8b949e;
     }
 
-    /* === SECTIONS === */
     main {
       max-width: 900px;
       width: 100%;
@@ -69,7 +79,6 @@
       margin: 0 auto 60px auto;
     }
 
-    /* === PROJECTS === */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -77,11 +86,12 @@
     }
 
     .project {
-      background: #161b22;
+      background: rgba(22, 27, 34, 0.9);
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
     }
 
     .project:hover {
@@ -100,7 +110,6 @@
       font-size: 0.95rem;
     }
 
-    /* === EXPERIENCE === */
     ul {
       list-style: none;
       padding: 0;
@@ -108,19 +117,19 @@
 
     li {
       margin-bottom: 20px;
-      background-color: #161b22;
+      background-color: rgba(22, 27, 34, 0.9);
       border-radius: 10px;
       padding: 20px;
       line-height: 1.5;
       color: #c9d1d9;
       box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
     }
 
     li b {
       color: #58a6ff;
     }
 
-    /* === SOCIALS === */
     .socials {
       text-align: center;
     }
@@ -136,7 +145,6 @@
       color: #79c0ff;
     }
 
-    /* === FOOTER === */
     footer {
       margin-top: 60px;
       padding: 40px 0;
@@ -146,7 +154,6 @@
       border-top: 1px solid #21262d;
     }
 
-    /* === ANIMATIONS === */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -155,9 +162,11 @@
 </head>
 <body>
 
+  <!-- 🌌 Fond animé -->
+  <canvas id="background"></canvas>
+
   <header>
     <img src="PhotoPro_cropped.jpg" alt="Photo de Maxence Retier" class="profile-pic" />
-
     <h1>Maxence Retier</h1>
     <h2>Game Developer — 3D, VR & AR</h2>
   </header>
@@ -177,8 +186,8 @@
         <div class="project">
           <h3>Raymarching Research</h3>
           <p>Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan).  
-          Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion.
-          <a href="https://github.com/Raymarching-PFE/Physicated_Raymarching" target="_blank">Voir sur Github →</a></p>
+          Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion.  
+          <a href="https://github.com/Raymarching-PFE/Physicated_Raymarching" target="_blank">Voir sur GitHub →</a></p>
         </div>
         <div class="project">
           <h3>ParallaxMapping</h3>
@@ -226,8 +235,72 @@
   </main>
 
   <footer>
-    © 2025 Maxence Retier — Portfolio créé avec ❤️ et un peu de C++
+    © 2025 Maxence Retier — Portfolio créé avec Github.
   </footer>
+
+  <!-- 🌠 SCRIPT: fond de particules -->
+  <script>
+    const canvas = document.getElementById("background");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    const particleCount = 80;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
+        this.alpha = Math.random() * 0.5 + 0.3;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(88,166,255,${this.alpha})`;
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Parallax effect on mouse move
+    document.addEventListener("mousemove", e => {
+      const moveX = (e.clientX / window.innerWidth - 0.5) * 2;
+      const moveY = (e.clientY / window.innerHeight - 0.5) * 2;
+      canvas.style.transform = `translate(${moveX * 10}px, ${moveY * 10}px)`;
+    });
+  </script>
 
 </body>
 </html>
