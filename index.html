@@ -29,6 +29,16 @@
       animation: fadeIn 1s ease forwards;
     }
 
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #58a6ff;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(56,139,253,0.3);
+    }
+
     h1 {
       font-size: 2.8rem;
       margin-bottom: 0.5rem;
@@ -146,6 +156,9 @@
 <body>
 
   <header>
+    <!-- 🔹 Ajoute ici ta photo pro (nom du fichier : photo.jpg par ex.) -->
+    <img src="photo.jpg" alt="Photo de Maxence Retier" class="profile-pic" />
+
     <h1>Maxence Retier</h1>
     <h2>Game Developer — 3D, VR & AR</h2>
   </header>
@@ -166,6 +179,11 @@
           <h3>Raymarching Research</h3>
           <p>Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan).  
           Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion.</p>
+        </div>
+        <div class="project">
+          <h3>ParallaxMapping</h3>
+          <p>OpenGL engine et shader de Parallax Mapping développés from scratch.  
+          <a href="https://github.com/xarmy7/ParallaxMapping" target="_blank">Voir sur GitHub →</a></p>
         </div>
         <div class="project">
           <h3>What the Scout</h3>
@@ -208,7 +226,7 @@
   </main>
 
   <footer>
-    © 2025 Maxence Retier — Portfolio créé avec Github
+    © 2025 Maxence Retier — Portfolio créé avec ❤️ et un peu de C++
   </footer>
 
 </body>
