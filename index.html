@@ -370,7 +370,6 @@
   }
 };
 
-
     langBtn.addEventListener("click", () => {
   currentLang = currentLang === "fr" ? "en" : "fr";
   const t = translations[currentLang];
@@ -392,9 +391,14 @@
   // Projets
   const projectItems = document.querySelectorAll(".project");
   projectItems.forEach(project => {
-    const id = project.dataset.id;
-    if(t.projects[id]) {
-      project.querySelector("p").innerHTML = t.projects[id];
+    const id = project.dataset.id.toLowerCase(); // <-- forcer en minuscules
+    const projects = {};
+    // Créer un objet avec toutes les clés en minuscules pour correspondance
+    Object.keys(t.projects).forEach(key => {
+      projects[key.toLowerCase()] = t.projects[key];
+    });
+    if(projects[id]) {
+      project.querySelector("p").innerHTML = projects[id];
     }
   });
 });
