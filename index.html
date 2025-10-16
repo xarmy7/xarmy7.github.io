@@ -195,7 +195,7 @@
   </header>
 
   <main>
-    <section class="bio">
+    <section class="bio" id="bio">
       <p>
         Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming,  
         je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR.  
@@ -204,31 +204,31 @@
     </section>
 
     <section>
-      <h2>🕹️ Projets</h2><br>
+      <h2 id="projects-title">🕹️ Projets</h2><br>
       <div class="projects">
-        <div class="project">
+        <div class="project" data-id="raymarching">
           <h3>Raymarching Research</h3>
           <p>Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan).  
           Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion.  
           <a href="https://github.com/Raymarching-PFE/Physicated_Raymarching" target="_blank">Voir sur GitHub →</a></p>
         </div>
-        <div class="project">
+        <div class="project" data-id="parallax">
           <h3>ParallaxMapping</h3>
           <p>OpenGL engine et shader de Parallax Mapping développés from scratch.  
           <a href="https://github.com/xarmy7/ParallaxMapping" target="_blank">Voir sur GitHub →</a></p>
         </div>
-        <div class="project">
+        <div class="project" data-id="scout">
           <h3>What the Scout</h3>
           <p>Jeu de fin d’étude réalisé avec 19 personnes.  
           IA en C++, outils de production, shaders personnalisés.  
           <a href="https://isart-digital.itch.io/what-the-scout" target="_blank">Voir sur itch.io →</a></p>
         </div>
-        <div class="project">
+        <div class="project" data-id="padel">
           <h3>SpacePadel</h3>
           <p>Jeu VR multijoueur local (Unity + Mirror).  
           Gestion réseau et compatibilité multi-casques.</p>
         </div>
-        <div class="project">
+        <div class="project" data-id="HaineDjinn">
           <h3>HaineDjinn Engine</h3>
           <p>Moteur de jeu OpenGL créé de zéro.  
           Architecture, optimisation, rendu et système de shaders.</p>
@@ -237,8 +237,8 @@
     </section>
 
     <section>
-      <h2>💼 Expériences</h2><br>
-      <ul>
+      <h2 id="exp-title">💼 Expériences</h2><br>
+      <ul id="exp">
         <li><b>Orbital Views</b> — Développeur 3D (2023–2025)  
           <br>Optimisation de rendu, gameplay, R&D de nouvelles technologies.</li>
         <li><b>Tkorp</b> — Développeur VR/AR (2023)  
@@ -249,7 +249,7 @@
     </section>
 
     <section class="socials">
-      <h2>📫 Contact</h2><br>
+      <h2 id="contact-title">📫 Contact</h2><br>
       <a href="mailto:maxence.retier@gmail.com">Email</a>
       <a href="https://github.com/xarmy7" target="_blank">GitHub</a>
       <a href="https://xarmy7.itch.io/" target="_blank">Itch.io</a>
@@ -258,7 +258,7 @@
   </main>
 
   <footer>
-    © 2025 Maxence Retier — Portfolio créé avec ❤️ et un peu de C++
+    © 2025 Maxence Retier — Portfolio créé avec Github.
   </footer>
 
   <!-- SCRIPT: particules -->
