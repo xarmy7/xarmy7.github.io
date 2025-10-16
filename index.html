@@ -5,90 +5,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maxence Retier | Game Developer</title>
   <style>
+    /* === RESET & THEME === */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fafafa;
-      color: #333;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      padding: 0 1rem;
     }
 
+    a { color: #58a6ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* === HEADER === */
     header {
       text-align: center;
       margin-top: 80px;
+      margin-bottom: 60px;
+      animation: fadeIn 1s ease forwards;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      color: #f0f6fc;
     }
 
     h2 {
       font-weight: 400;
-      color: #666;
-      margin-top: 0;
+      color: #8b949e;
     }
 
+    /* === SECTIONS === */
     main {
-      max-width: 800px;
-      width: 90%;
-      margin-top: 50px;
+      max-width: 900px;
+      width: 100%;
     }
 
     section {
-      margin-bottom: 60px;
+      margin-bottom: 80px;
     }
 
     .bio {
       text-align: center;
-      line-height: 1.6;
-      color: #555;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      color: #c9d1d9;
+      max-width: 700px;
+      margin: 0 auto 60px auto;
     }
 
+    /* === PROJECTS === */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .project {
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
+      background: #161b22;
+      border-radius: 12px;
       padding: 20px;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project:hover {
       transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(56,139,253,0.3);
     }
 
     .project h3 {
-      margin-top: 0;
+      margin-bottom: 10px;
+      color: #58a6ff;
     }
 
-    footer {
-      margin-top: auto;
+    .project p {
+      color: #c9d1d9;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    /* === EXPERIENCE === */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 20px;
+      background-color: #161b22;
+      border-radius: 10px;
+      padding: 20px;
+      line-height: 1.5;
+      color: #c9d1d9;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    }
+
+    li b {
+      color: #58a6ff;
+    }
+
+    /* === SOCIALS === */
+    .socials {
       text-align: center;
-      padding: 40px 0;
-      color: #777;
     }
 
     .socials a {
-      color: #333;
-      text-decoration: none;
-      margin: 0 10px;
+      margin: 0 12px;
       font-weight: 500;
+      color: #58a6ff;
       transition: color 0.2s;
     }
 
     .socials a:hover {
-      color: #0077b6;
+      color: #79c0ff;
+    }
+
+    /* === FOOTER === */
+    footer {
+      margin-top: 60px;
+      padding: 40px 0;
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.9rem;
+      border-top: 1px solid #21262d;
+    }
+
+    /* === ANIMATIONS === */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -109,55 +160,55 @@
     </section>
 
     <section>
-      <h2>Projets</h2>
+      <h2>🕹️ Projets</h2><br>
       <div class="projects">
         <div class="project">
-          <h3>🧠 What the Scout</h3>
+          <h3>What the Scout</h3>
           <p>Jeu de fin d’étude réalisé avec 19 personnes.  
           IA en C++, outils de production, shaders personnalisés.  
           <a href="https://isart-digital.itch.io/what-the-scout" target="_blank">Voir sur itch.io →</a></p>
         </div>
         <div class="project">
-          <h3>🔥 Raymarching Research</h3>
-          <p>Projet de recherche sur la visualisation 3D du verre fondu.  
-          Raymarching, compute shaders (Vulkan), rendu temps réel, collaboration avec le LORIA.</p>
+          <h3>Raymarching Research</h3>
+          <p>Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan).  
+          Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion.</p>
         </div>
         <div class="project">
-          <h3>🎮 SpacePadel</h3>
-          <p>Jeu de padel en réalité virtuelle (Unity, Mirror).  
-          Multijoueur local à 4, optimisation réseau et gestion VR multi-casques.</p>
+          <h3>SpacePadel</h3>
+          <p>Jeu VR multijoueur local (Unity + Mirror).  
+          Gestion réseau et compatibilité multi-casques.</p>
         </div>
         <div class="project">
-          <h3>⚙️ HaineDjinn Engine</h3>
-          <p>Moteur de jeu maison basé sur OpenGL.  
-          Architecture, optimisation, rendu temps réel.</p>
+          <h3>HaineDjinn Engine</h3>
+          <p>Moteur de jeu OpenGL créé de zéro.  
+          Architecture, optimisation, rendu et système de shaders.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Expériences</h2>
+      <h2>💼 Expériences</h2><br>
       <ul>
         <li><b>Orbital Views</b> — Développeur 3D (2023–2025)  
           <br>Optimisation de rendu, gameplay, R&D de nouvelles technologies.</li>
         <li><b>Tkorp</b> — Développeur VR/AR (2023)  
-          <br>R&D VR/AR, netcode multijoueur, gestion cross-platform.</li>
-        <li><b>WWF</b> — Bénévole Communication jeu vidéo (2021)  
-          <br>Recherche sur la visibilité et les dons dans le monde du jeu vidéo.</li>
+          <br>R&D VR/AR, Netcode multijoueur, gestion cross-platform.</li>
+        <li><b>WWF</b> — Communication jeu vidéo (2021)  
+          <br>Étude sur la visibilité et les dons dans le monde du jeu vidéo.</li>
       </ul>
     </section>
 
     <section class="socials">
-      <h2>Contact</h2>
-      <a href="mailto:maxence.retier@gmail.com">📧 Email</a>
-      <a href="https://github.com/xarmy7" target="_blank">💻 GitHub</a>
-      <a href="https://xarmy7.itch.io/" target="_blank">🎮 Itch.io</a>
-      <a href="https://www.linkedin.com/in/maxence-retier-1313ba211/" target="_blank">💼 LinkedIn</a>
+      <h2>📫 Contact</h2><br>
+      <a href="mailto:maxence.retier@gmail.com">Email</a>
+      <a href="https://github.com/xarmy7" target="_blank">GitHub</a>
+      <a href="https://xarmy7.itch.io/" target="_blank">Itch.io</a>
+      <a href="https://www.linkedin.com/in/maxence-retier-1313ba211/" target="_blank">LinkedIn</a>
     </section>
   </main>
 
   <footer>
-    © 2025 Maxence Retier — Game Developer Portfolio
+    © 2025 Maxence Retier — Portfolio créé avec ❤️ et un peu de C++
   </footer>
 
 </body>
