@@ -1,42 +1,168 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parallax Mapping | Maxence Retier</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css" />
   <style>
-    main { max-width: 800px; margin: 80px auto; padding: 0 1rem; }
-    .project-header { text-align: center; margin-bottom: 40px; }
-    .project-header img { width: 100%; max-width: 600px; border-radius: 12px; margin-top: 20px; box-shadow: 0 0 15px rgba(56,139,253,0.3); }
-    .back-btn { display: inline-block; margin-top: 20px; background: #161b22; border: 1px solid #21262d; color: #58a6ff; border-radius: 8px; padding: 8px 14px; text-decoration: none; transition: background 0.2s ease; }
-    .back-btn:hover { background: #21262d; color: #79c0ff; }
+    body {
+      background: radial-gradient(circle at 30% 10%, #0d1117, #010409);
+      color: #c9d1d9;
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 1rem 100px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #f0f6fc;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .project-header img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 16px;
+      margin: 20px 10px;
+      box-shadow: 0 0 20px rgba(56, 139, 253, 0.25);
+      transform: scale(1);
+      transition: all 0.3s ease;
+      opacity: 0.9;
+    }
+
+    .project-header img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 35px rgba(56, 139, 253, 0.45);
+      opacity: 1;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 25px;
+      background: linear-gradient(145deg, #161b22, #0d1117);
+      border: 1px solid #21262d;
+      color: #58a6ff;
+      border-radius: 10px;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: #21262d;
+      color: #79c0ff;
+      transform: translateY(-2px);
+    }
+
+    main p {
+      font-size: 1.05rem;
+      color: #c9d1d9;
+      margin-bottom: 1.2rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    ul li {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      margin: 8px 0;
+      padding: 10px 14px;
+      transition: background 0.2s ease;
+    }
+
+    ul li:hover {
+      background: #1c2128;
+    }
+
+    ul b {
+      color: #58a6ff;
+    }
+
+    a[target="_blank"] {
+      display: inline-block;
+      background: #238636;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    a[target="_blank"]:hover {
+      background: #2ea043;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.9rem;
+      padding: 40px 0 20px;
+      border-top: 1px solid #21262d;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
   <header class="project-header">
     <a href="../index.html" class="back-btn">← Retour au portfolio</a>
     <h1>Parallax Mapping</h1>
-    <img src="../images/parallaxWall.gif" alt="Simple Parallax Mappinng Shader">
-    <img src="../images/parallaxGround.gif" alt="4k Parallax Mapping Shader">
+    <img src="../images/parallaxWall.gif" alt="Simple Parallax Mapping Shader" />
+    <img src="../images/parallaxGround.gif" alt="4K Parallax Mapping Shader" />
   </header>
 
   <main>
     <p>
-      Développement d’un moteur OpenGL et d’un shader de Parallax Mapping entièrement codés from scratch.  
-      Le projet explore la technique de déformation de texture pour simuler la profondeur sur une surface plane,
-      sans géométrie supplémentaire.
+      Développement d’un moteur OpenGL et d’un shader de Parallax Mapping entièrement codés <b>from scratch</b>.  
+      Ce projet explore la technique de déformation de textures pour simuler une <b>profondeur réaliste</b> sur une surface plane,
+      sans géométrie supplémentaire. L'objectif : comprendre en détail le pipeline de rendu et la manipulation des normales.
     </p>
+
     <ul>
       <li><b>Moteur :</b> OpenGL</li>
       <li><b>Langage :</b> C++ / GLSL</li>
-      <li><b>Objectif :</b> Apprentissage avancé du pipeline de rendu et des shaders.</li>
+      <li><b>Objectif :</b> Apprentissage avancé du pipeline de rendu et des shaders</li>
     </ul>
-    <p><a href="https://github.com/xarmy7/ParallaxMapping" target="_blank">Voir sur GitHub →</a></p>
+
+    <p>
+      <a href="https://github.com/xarmy7/ParallaxMapping" target="_blank">Voir sur GitHub →</a>
+    </p>
   </main>
 
   <footer>
-    © 2025 Maxence Retier — Portfolio créé avec Github.
+    © 2025 Maxence Retier — Portfolio créé avec GitHub.
   </footer>
 </body>
 </html>
