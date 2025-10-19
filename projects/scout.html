@@ -33,20 +33,32 @@
       margin-bottom: 60px;
     }
 
-    .project-header iframe {
+    /* === Conteneur vidéo responsive en 16:9 === */
+    .video-container {
+      position: relative;
       width: 100%;
-      max-width: 1280px;
-      height: 720px;
-      border: none;
+      max-width: 720px;
+      margin: 25px auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
       border-radius: 16px;
       box-shadow: 0 0 25px rgba(56, 139, 253, 0.25);
-      margin-top: 25px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
 
-    .project-header iframe:hover {
+    .video-container:hover {
       transform: scale(1.02);
       box-shadow: 0 0 40px rgba(56, 139, 253, 0.45);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      object-fit: cover;
     }
 
     .back-btn {
@@ -123,14 +135,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -138,13 +144,15 @@
   <header class="project-header">
     <a href="../index.html" class="back-btn">← Retour au portfolio</a>
     <h1>What the Scout</h1>
-    
-    <!-- Trailer YouTube -->
-    <iframe 
-      src="https://www.youtube.com/embed/bkN2ZBewmXA" 
-      title="Trailer de What the Scout"
-      allowfullscreen>
-    </iframe>
+
+    <!-- 🎥 Trailer YouTube en 16:9 -->
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/bkN2ZBewmXA"
+        title="Trailer de What the Scout"
+        allowfullscreen>
+      </iframe>
+    </div>
   </header>
 
   <main>
