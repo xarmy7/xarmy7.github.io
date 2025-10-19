@@ -33,17 +33,18 @@
       margin-bottom: 70px;
     }
 
-     .video-container {
-       position: relative;
-       width: 200%;
-       left: -50%;
-       aspect-ratio: 16 / 9;
-       overflow: hidden;
-       border-radius: 18px;
-       box-shadow: 0 0 35px rgba(56, 139, 253, 0.35);
-       transition: box-shadow 0.4s ease, transform 0.4s ease;
-       background: rgba(56, 139, 253, 0.05);
-     }
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px; /* limite la largeur sur grand écran */
+      margin: 40px auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 0 35px rgba(56, 139, 253, 0.35);
+      transition: box-shadow 0.4s ease, transform 0.4s ease;
+      background: rgba(56, 139, 253, 0.05);
+}
 
     .video-container:hover {
       transform: scale(1.02);
