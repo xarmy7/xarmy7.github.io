@@ -22,7 +22,7 @@
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #f0f6fc;
       margin-bottom: 1rem;
       letter-spacing: 1px;
@@ -30,25 +30,25 @@
 
     .project-header {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 70px;
     }
 
-    /* === Conteneur vidéo responsive en 16:9 === */
     .video-container {
       position: relative;
       width: 100%;
-      max-width: 720px;
-      margin: 25px auto;
+      max-width: 1200px;
+      margin: 40px auto;
       aspect-ratio: 16 / 9;
       overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(56, 139, 253, 0.25);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      border-radius: 18px;
+      box-shadow: 0 0 35px rgba(56, 139, 253, 0.35);
+      transition: box-shadow 0.4s ease, transform 0.4s ease;
+      background: rgba(56, 139, 253, 0.05);
     }
 
     .video-container:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 40px rgba(56, 139, 253, 0.45);
+      box-shadow: 0 0 50px rgba(56, 139, 253, 0.5);
     }
 
     .video-container iframe {
@@ -81,7 +81,7 @@
     }
 
     main p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: #c9d1d9;
       margin-bottom: 1.2rem;
     }
@@ -138,6 +138,17 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* 📱 Mobile : garde la vidéo fluide */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .video-container {
+        max-width: 100%;
+        margin: 25px auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -145,7 +156,7 @@
     <a href="../index.html" class="back-btn">← Retour au portfolio</a>
     <h1>What the Scout</h1>
 
-    <!-- 🎥 Trailer YouTube en 16:9 -->
+    <!-- 🎥 Trailer YouTube grand format -->
     <div class="video-container">
       <iframe 
         src="https://www.youtube.com/embed/bkN2ZBewmXA"
