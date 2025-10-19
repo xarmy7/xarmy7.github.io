@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What the Scout | Maxence Retier</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      background: radial-gradient(circle at 30% 10%, #0d1117, #010409);
+      color: #c9d1d9;
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
+    main {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 1rem 100px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #f0f6fc;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .project-header iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(56, 139, 253, 0.25);
+      margin-top: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-header iframe:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(56, 139, 253, 0.45);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 25px;
+      background: linear-gradient(145deg, #161b22, #0d1117);
+      border: 1px solid #21262d;
+      color: #58a6ff;
+      border-radius: 10px;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: #21262d;
+      color: #79c0ff;
+      transform: translateY(-2px);
+    }
+
+    main p {
+      font-size: 1.05rem;
+      color: #c9d1d9;
+      margin-bottom: 1.2rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    ul li {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 8px;
+      margin: 8px 0;
+      padding: 10px 14px;
+      transition: background 0.2s ease;
+    }
+
+    ul li:hover {
+      background: #1c2128;
+    }
+
+    ul b {
+      color: #58a6ff;
+    }
+
+    a[target="_blank"] {
+      display: inline-block;
+      background: #238636;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    a[target="_blank"]:hover {
+      background: #2ea043;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.9rem;
+      padding: 40px 0 20px;
+      border-top: 1px solid #21262d;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="project-header">
+    <a href="../index.html" class="back-btn">← Retour au portfolio</a>
+    <h1>What the Scout</h1>
+    
+    <!-- Trailer YouTube -->
+    <iframe 
+      src="https://www.youtube.com/embed/bkN2ZBewmXA" 
+      title="Trailer de What the Scout"
+      allowfullscreen>
+    </iframe>
+  </header>
+
+  <main>
+    <p>
+      <b>What the Scout</b> est un jeu d’infiltration humoristique développé par une équipe de <b>19 étudiants</b> d’Isart Digital.
+      Vous incarnez un éclaireur maladroit chargé d’espionner un camp ennemi — sauf que tout ne se passe pas comme prévu !
+    </p>
+
+    <p>
+      J’ai contribué en tant que <b>programmeur gameplay et outils</b>, avec des responsabilités variées :
+      gestion de l’intelligence artificielle en C++, développement d’outils internes pour la production,
+      et création de shaders personnalisés pour améliorer l’ambiance visuelle.
+    </p>
+
+    <ul>
+      <li><b>Moteur :</b> Unreal Engine 5</li>
+      <li><b>Langage :</b> C++ / Blueprints</li>
+      <li><b>Rôle :</b> Programmation IA, outils de production, shaders</li>
+      <li><b>Équipe :</b> 19 personnes</li>
+    </ul>
+
+    <p>
+      <a href="https://isart-digital.itch.io/what-the-scout" target="_blank">Voir sur itch.io →</a>
+    </p>
+  </main>
+
+  <footer>
+    © 2025 Maxence Retier — Portfolio créé avec GitHub.
+  </footer>
+</body>
+</html>
