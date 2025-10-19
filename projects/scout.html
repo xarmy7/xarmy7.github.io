@@ -30,7 +30,6 @@
       letter-spacing: 1px;
     }
 
-    /* --- Header --- */
     .project-header {
       text-align: center;
       margin-bottom: 70px;
@@ -56,9 +55,7 @@
       transform: translateY(-2px);
     }
 
-    /* --- Vidéo --- */
-    .video-container 
-    {
+    .video-container {
       position: relative;
       width: 100%;
       max-width: 900px;
@@ -84,19 +81,8 @@
       height: 100%;
       border: none;
     }
-    
-  /* Mobile : ajust */ 
-  @media (max-width: 768px) { 
-    .video-container { 
-      width: 200%;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 25px auto;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(56, 139, 253, 0.25);
-    }
 
-    /* --- Picture Gallery --- */
+    /* --- Picture gallery style --- */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -150,7 +136,7 @@
       color: #58a6ff;
     }
 
-    /* --- Button --- */
+    /* --- Button--- */
     a[target="_blank"] {
       display: inline-block;
       background: #238636;
@@ -167,7 +153,6 @@
       transform: translateY(-2px);
     }
 
-    /* --- Footer --- */
     footer {
       text-align: center;
       color: #8b949e;
@@ -183,7 +168,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* --- Mobile : slider  --- */
+    /* --- Picture slider --- */
     @media (max-width: 768px) {
       .gallery {
         display: flex;
@@ -224,7 +209,7 @@
     </div>
   </header>
 
-  <!-- Gallery -->
+  <!-- Picture Gallery -->
   <div class="gallery">
     <img src="../images/WTS1.png" alt="What the Scout screen 1" />
     <img src="../images/WTS2.png" alt="What the Scout screen 2" />
