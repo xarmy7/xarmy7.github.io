@@ -184,8 +184,54 @@
     <img src="../images/RaymarchingStep5.gif" alt="Bake glass effect" />
     <img src="../images/RaymarchingStep6.gif" alt="Dynamic glass effect with complex shape" />
   </div>
-  
+
   <main>
+  <h2>🔬 Contexte</h2>
+  <p>
+    Ce projet de recherche, intitulé <b>3D Visualisation of Molten Glass using Raymarching Technique</b>, a été réalisé en collaboration avec le <b>LORIA</b> (Laboratoire Lorrain de Recherche en Informatique et ses Applications) dans le cadre du programme <b>GPU Option – ISART Digital</b>.<br><br>
+    L’objectif était de concevoir un <b>moteur de rendu temps réel</b> capable de simuler le comportement visuel du <b>verre en fusion</b> sans recourir à une géométrie explicite.  
+    Le projet s’inscrit dans une démarche de <b>préservation des savoir-faire artisanaux</b> et d’<b>innovation technologique</b>, visant à fournir un outil immersif pour la formation à la verrerie en réalité augmentée.
+  </p>
+
+  <hr style="margin: 40px 0; border: 0; border-top: 1px solid #21262d;">
+
+  <h2>🧩 Mon travail</h2>
+  <ul>
+    <li>
+      💡 <b>Raymarching et rendu implicite :</b><br>
+      Développement complet du <b>pipeline de raymarching</b> sous <b>Vulkan</b>, basé sur des <b>Signed Distance Functions (SDF)</b> pour représenter des surfaces implicites déformables (sphères, tori, métaballes).  
+      Implémentation du <b>blending entre surfaces</b> pour reproduire la fusion organique du verre fondu et de son comportement visuel fluide.
+    </li>
+
+    <li>
+      🌫️ <b>Transparence et réfraction :</b><br>
+      Intégration d’un modèle de <b>transmission et d’absorption lumineuse</b> simulant la translucidité du verre.  
+      Application d’effets de <b>réflexion, refraction et atténuation lumineuse</b> dépendant de l’indice de réfraction, permettant d’obtenir une apparence visuelle réaliste et dynamique.
+    </li>
+
+    <li>
+      ⚙️ <b>Optimisation GPU :</b><br>
+      Migration du pipeline depuis les <b>fragment shaders</b> vers les <b>compute shaders</b> pour un contrôle direct du calcul parallèle et une meilleure gestion mémoire.  
+      Amélioration des performances via une <b>partition spatiale hiérarchique (Binary Tree)</b> pour accélérer les évaluations de distance et réduire le nombre de calculs par rayon.
+    </li>
+  </ul>
+
+  <hr style="margin: 40px 0; border: 0; border-top: 1px solid #21262d;">
+
+  <h2>🚀 Résultats et perspectives</h2>
+  <p>
+    Le moteur permet aujourd’hui de <b>visualiser en temps réel</b> des surfaces implicites semi-transparentes avec un éclairage <b>Phong + Fresnel</b> réaliste.  
+    Le passage aux compute shaders a amélioré les performances GPU de manière significative, tout en préparant l’intégration future de <b>données volumétriques</b> ou de <b>nuages de points 3D</b>.  
+    Ce travail pose les bases d’une <b>simulation de verre en fusion interactive</b>, ouvrant la voie à des applications dans la <b>formation artisanale</b> et la <b>recherche graphique avancée</b>.
+  </p>
+
+  <p style="margin-top: 30px;">
+    <a href="https://github.com/Raymarching-PFE/Physicated_Raymarching" target="_blank">Voir sur GitHub →</a><br>
+    <a href="..docs/MGP2_PFEM2_Mémoire_ChevalierRetierMéhalin.pdf" target="_blank">Voir le document de recherche →</a>
+  </p>
+</main>
+  
+  <!-- <main>
     <p>
       Projet de recherche sur le rendu du verre fondu avec raymarching et compute shaders (Vulkan).  
       Réalisé en collaboration avec le LORIA. Le but était d'obtenir un rendu temps réel du verre
@@ -207,7 +253,7 @@
       <a href="https://github.com/Raymarching-PFE/Physicated_Raymarching" target="_blank">Voir sur GitHub →</a><br>
       <a href="..docs/MGP2_PFEM2_Mémoire_ChevalierRetierMéhalin.pdf" target="_blank">Voir le document de recherche →</a>
     </p>
-  </main>
+  </main> -->
 
   <footer>
     © 2025 Maxence Retier — Portfolio créé avec GitHub.
