@@ -138,31 +138,11 @@
       margin-bottom: 1.2rem;
     }
 
-    /* --- Correction pour les sous-points --- */
-.sub-points li {
-  background: none !important;       /* supprime le fond sombre */
-  border: none !important;           /* supprime la bordure */
-  border-radius: 0 !important;       /* pas d'arrondi */
-  padding: 0 !important;             /* pas de padding interne */
-  margin: 4px 0 !important;          /* espace léger entre lignes */
-  transition: none !important;       /* pas d'effet de hover */
-}
-
-.sub-points li:hover {
-  background: none !important;       /* désactive l’effet au survol */
-}
-
-.sub-points li::before {
-  content: "• ";
-  color: #58a6ff;                    /* couleur bleue cohérente */
-  margin-right: 4px;
-}
-
   ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
+      list-style-type: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
 
     ul li {
       background: #161b22;
@@ -264,59 +244,58 @@
     <img src="../images/WTS6.png" alt="What the Scout screen 6" />
   </div>
 
-  <main>
-    <h2>🎮 Contexte</h2>
-    <p>
-      <b>What the Scout?!</b> est un <b>party game</b> développé sur <b>Unreal Engine 4.27</b> pour <b>PS4</b>, dans le cadre du projet de fin d’études à <b>ISART Digital</b>.<br><br>
-      Le joueur incarne un chef scout chargé de sauver un groupe d’enfants incontrôlables d’une mort aussi absurde que spectaculaire.
-      Le jeu repose sur une <b>IA autonome et chaotique</b>, générant des situations comiques et imprévisibles à chaque partie.
-    </p>
+<main>
+  <h2>🎮 Context</h2>
+  <p>
+    <b>What the Scout?!</b> (anciennement <i>Don’t Let Them Die</i>) est un jeu de <b>gestion et de réaction en temps réel</b> développé sur <b>Unreal Engine 4.27</b> pour <b>PS4</b>, dans le cadre du projet de fin d’études à <b>ISART Digital</b>.<br><br>
+    Le joueur incarne un chef scout chargé de sauver un groupe d’enfants incontrôlables d’une mort aussi absurde que spectaculaire.
+    Le jeu repose sur une <b>IA autonome et chaotique</b>, générant des situations comiques et imprévisibles à chaque partie.
+  </p>
 
-    <p>
-      L’équipe comptait <b>19 membres</b>, incluant :<br>
-      2 producteurs, 2 sound designers, 3 game designers &amp; programmers,<br>
-      4 game designers, 4 artistes 3D, 2 artistes 2D,<br>
-      et 2 programmeurs gameplay (dont moi-même).
-    </p>
+  <p>
+    L’équipe comptait <b>19 membres</b>, incluant :<br>
+    2 producteurs, 2 sound designers, 3 game designers &amp; programmers,<br>
+    4 game designers, 4 artistes 3D, 2 artistes 2D,<br>
+    et 2 programmeurs gameplay (dont moi-même).
+  </p>
 
-    <hr style="margin: 40px 0; border: 0; border-top: 1px solid #21262d;">
+  <hr style="margin: 40px 0; border: 0; border-top: 1px solid #21262d;">
 
-    <h2>🧩 Mon travail</h2>
-    <ul>
-      <li>
-        🧠 <b>Intelligence artificielle :</b> conception d’un système modulaire et paramétrable basé sur des <b>probabilités pondérées (Data Tables)</b>, permettant de générer des comportements variés et imprévisibles.
-        Chaque scout possède un ensemble d’actions dynamiques, favorisant un gameplay émergent et humoristique.
-      </li>
-
-      <li>
-        🧰 <b>Outils de production :</b> création de <b>Blueprints génériques</b> et d’outils d’édition destinés aux game designers pour ajuster, tester et itérer sur les comportements IA et les interactions environnementales.
-      </li>
-
-      <li>
-        🎨 <b>Outline Shader :</b> développement d’un shader d’outline optimisé pour améliorer la lisibilité des personnages et éléments interactifs, tout en conservant un pipeline de rendu léger.
-      </li>
-
-      <li>
-        ⚙️ <b>Optimisation des performances :</b>
-        <ul class="sub-points">
-          <li>Réduction des <b>draw calls</b> de ~9000 à ~1300 grâce au regroupement d’objets et aux <b>LOD</b>.</li>
-          <li><b>Bake des lumières</b> (90 % statiques) pour stabiliser le rendu sur PS4.</li>
-          <li>Migration du pipeline <b>Deferred → Forward Shading</b> pour de meilleures performances et un rendu plus fluide.</li>
-        </ul>
+  <h2>🧩 Work</h2>
+  <ul>
+    <li>
+      🧠 <b>Intelligence artificielle :</b> conception d’un système modulaire et paramétrable basé sur des <b>probabilités pondérées (Data Tables)</b>, permettant de générer des comportements variés et imprévisibles.
+      Chaque scout possède un ensemble d’actions dynamiques, favorisant un gameplay émergent et humoristique.
     </li>
 
-    <hr style="margin: 40px 0; border: 0; border-top: 1px solid #21262d;">
+    <li>
+      🧰 <b>Outils de production :</b> création de <b>Blueprints génériques</b> et d’outils d’édition destinés aux game designers pour ajuster, tester et itérer sur les comportements IA et les interactions environnementales.
+    </li>
 
-    <h2>🚀 Compétences acquises</h2>
-    <p>
-      Ce projet m’a permis de renforcer mes compétences en <b>programmation IA</b> et <b>gameplay</b> sur Unreal Engine (C++ &amp; Blueprints), ainsi qu’en <b>optimisation technique</b> pour plateformes consoles.<br><br>
-      J’y ai également approfondi ma maîtrise des <b>outils de production internes</b> et du travail collaboratif sous <b>Perforce</b>, tout en développant une solide compréhension du <b>pipeline complet</b> de création d’un jeu, de la R&amp;D à la stabilisation du build final.
-    </p>
+    <li>
+      🎨 <b>Outline Shader :</b> développement d’un shader d’outline optimisé pour améliorer la lisibilité des personnages et éléments interactifs, tout en conservant un pipeline de rendu léger.
+    </li>
 
-    <p style="margin-top: 30px;">
-      <a href="https://isart-digital.itch.io/what-the-scout" target="_blank">Voir sur itch.io →</a>
-    </p>
-  </main>
+    <li>
+      ⚙️ <b>Optimisation des performances :</b><br>
+      • Réduction des <b>draw calls</b> de ~9000 à ~1300 grâce au regroupement d’objets et aux <b>LOD</b>.<br>
+      • <b>Bake des lumières</b> (90 % statiques) pour stabiliser le rendu sur PS4.<br>
+      • Migration du pipeline <b>Deferred → Forward Shading</b> pour de meilleures performances et un rendu plus fluide.
+    </li>
+  </ul>
+
+  <hr style="margin: 40px 0; border: 0; border-top: 1px solid #21262d;">
+
+  <h2>🚀 Takeaways</h2>
+  <p>
+    Ce projet m’a permis de renforcer mes compétences en <b>programmation IA</b> et <b>gameplay</b> sur Unreal Engine (C++ &amp; Blueprints), ainsi qu’en <b>optimisation technique</b> pour plateformes consoles.<br><br>
+    J’y ai également approfondi ma maîtrise des <b>outils de production internes</b> et du travail collaboratif sous <b>Perforce</b>, tout en développant une solide compréhension du <b>pipeline complet</b> de création d’un jeu, de la R&amp;D à la stabilisation du build final.
+  </p>
+
+  <p style="margin-top: 30px;">
+    <a href="https://isart-digital.itch.io/what-the-scout" target="_blank">Voir sur itch.io →</a>
+  </p>
+</main>
 
   
   <!--<main>
