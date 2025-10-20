@@ -139,15 +139,16 @@
     }
 
     .sub-points {
-    margin-left: 2rem;
-    /*margin-top: 0.5rem;*/
-    /*line-height: 1.6;*/
-    /*color: #c9d1d9;*/
+      margin-left: 2rem;  
+      margin-top: 0.5rem;
+      line-height: 1.6;
+      color: #c9d1d9;
+      list-style-type: none;
   }
 
-  .sub-points li {
-    list-style-type: "• ";
-    padding-left: 0.5rem;
+  .sub-points li::before {
+    content: "• ";  
+    color: #58a6ff;
   }
 
   ul {
