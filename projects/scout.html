@@ -138,18 +138,25 @@
       margin-bottom: 1.2rem;
     }
 
-    .sub-points {
-      margin-left: 2rem;  
-      margin-top: 0.5rem;
-      line-height: 1.6;
-      color: #c9d1d9;
-      list-style-type: none;
-  }
+    /* --- Correction pour les sous-points --- */
+.sub-points li {
+  background: none !important;       /* supprime le fond sombre */
+  border: none !important;           /* supprime la bordure */
+  border-radius: 0 !important;       /* pas d'arrondi */
+  padding: 0 !important;             /* pas de padding interne */
+  margin: 4px 0 !important;          /* espace léger entre lignes */
+  transition: none !important;       /* pas d'effet de hover */
+}
 
-  .sub-points li::before {
-    content: "• ";  
-    color: #58a6ff;
-  }
+.sub-points li:hover {
+  background: none !important;       /* désactive l’effet au survol */
+}
+
+.sub-points li::before {
+  content: "• ";
+  color: #58a6ff;                    /* couleur bleue cohérente */
+  margin-right: 4px;
+}
 
   ul {
     list-style-type: none;
