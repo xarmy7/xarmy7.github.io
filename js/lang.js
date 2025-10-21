@@ -23,7 +23,6 @@ const translations = {
       hainedjinn: "OpenGL game engine built from scratch. Architecture, optimization, rendering, and shader system."
     },
     scoutPage: {
-      projectTitle: "What the Scout",
       contextText: "<b>What the Scout?!</b> is a party game developed in <b>Unreal Engine 4.27</b> for <b>PS4</b> as a final project at ISART Digital. The player controls a scout leader in charge of saving a group of uncontrollable children from absurdly spectacular deaths. The game relies on autonomous and chaotic AI, generating humorous and unpredictable situations.",
       teamText: "The team had 19 members: 2 producers, 2 sound designers, 3 game designers & programmers, 4 game designers, 4 3D artists, 2 2D artists, and 2 game programmers.",
       workAI: "🧠 AI: Designed a modular and parameterized system based on weighted probabilities (Data Tables), generating varied and unpredictable behaviors.",
@@ -56,7 +55,6 @@ const translations = {
       hainedjinn: "Moteur de jeu OpenGL créé de zéro. Architecture, optimisation, rendu et système de shaders."
     },
     scoutPage: {
-      projectTitle: "What the Scout",
       contextText: "<b>What the Scout?!</b> est un <b>party game</b> développé sur <b>Unreal Engine 4.27</b> pour <b>PS4</b>, dans le cadre du projet de fin d’études à <b>ISART Digital</b>.<br><br>Le joueur incarne un chef scout chargé de sauver un groupe d’enfants incontrôlables d’une mort aussi absurde que spectaculaire. Le jeu repose sur une <b>IA autonome et chaotique</b>, générant des situations comiques et imprévisibles à chaque partie.",
       teamText: "L’équipe comptait <b>19 membres</b>, incluant : 2 producers, 2 sound designers, 3 game designers & programmers, 4 game designers, 4 artistes 3D, 2 artistes 2D, et 2 game programmers.",
       workAI: "🧠 <b>Intelligence artificielle :</b> conception d’un système modulaire et paramétrable basé sur des <b>probabilités pondérées (Data Tables)</b>, générant des comportements variés et imprévisibles.",
