@@ -1,228 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maxence Retier | Game Developer</title>
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maxence Retier | Game Developer</title>
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  
+  <body>
+    <!-- Background animation -->
+    <canvas id="background"></canvas>
 
-  <!-- Background animation -->
-  <canvas id="background"></canvas>
+    <!-- Language button -->
+    <button id="langBtn">English 🇬🇧</button>
 
-  <!-- Language button -->
-  <button id="langBtn">English 🇬🇧</button>
+    <header>
+      <img src="images/PhotoPro_cropped.jpg" alt="Photo de Maxence Retier" class="profile-pic" />
+      <h1>Maxence Retier</h1>
+      <h2>Game Developer — 3D, VR & AR</h2>
+    </header>
 
-  <header>
-    <img src="images/PhotoPro_cropped.jpg" alt="Photo de Maxence Retier" class="profile-pic" />
-    <h1>Maxence Retier</h1>
-    <h2>Game Developer — 3D, VR & AR</h2>
-  </header>
+    <main>
+      <section class="bio" id="bio">
+        <p>
+          Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming,  
+          je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR.  
+          J’aime concevoir des expériences innovantes et fun à jouer, où la technique rencontre la créativité.
+        </p>
+      </section>
 
-  <main>
-    <section class="bio" id="bio">
-      <p>
-        Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming,  
-        je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR.  
-        J’aime concevoir des expériences innovantes et fun à jouer, où la technique rencontre la créativité.
-      </p>
-    </section>
+      <section>
+        <h2 id="projects-title">🕹️ Projets</h2><br>
+        <div class="projects">
+          <a class="project" data-id="raymarching" href="projects/raymarching.html">
+            <h3>Raymarching Research</h3>
+            <p>Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan).  
+            Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion.</p>
+          </a>
 
-    <section>
-      <h2 id="projects-title">🕹️ Projets</h2><br>
-      <div class="projects">
-        <a class="project" data-id="raymarching" href="projects/raymarching.html">
-          <h3>Raymarching Research</h3>
-          <p>Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan).  
-          Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion.</p>
-        </a>
+          <a class="project" data-id="scout" href="projects/scout.html">
+            <h3>What the Scout</h3>
+            <p>Jeu de fin d’étude réalisé avec 19 personnes.  
+            IA en C++, outils de production, shaders personnalisés.</p>
+          </a>
 
-        <a class="project" data-id="scout" href="projects/scout.html">
-          <h3>What the Scout</h3>
-          <p>Jeu de fin d’étude réalisé avec 19 personnes.  
-          IA en C++, outils de production, shaders personnalisés.</p>
-        </a>
+          <a class="project" data-id="parallax" href="projects/parallax.html">
+            <h3>Parallax Mapping</h3>
+            <p>OpenGL engine et shader de Parallax Mapping développés from scratch.</p>
+          </a>
 
-        <a class="project" data-id="parallax" href="projects/parallax.html">
-          <h3>Parallax Mapping</h3>
-          <p>OpenGL engine et shader de Parallax Mapping développés from scratch.</p>
-        </a>
+          <a class="project" data-id="padel" href="projects/padel.html">
+            <h3>SpacePadel</h3>
+            <p>Jeu VR multijoueur local (Unity + Mirror).  
+            Gestion réseau et compatibilité multi-casques.</p>
+          </a>
 
-        <a class="project" data-id="padel" href="projects/padel.html">
-          <h3>SpacePadel</h3>
-          <p>Jeu VR multijoueur local (Unity + Mirror).  
-          Gestion réseau et compatibilité multi-casques.</p>
-        </a>
+          <a class="project" data-id="hainedjinn" href="projects/hainedjinn.html">
+            <h3>HaineDjinn Engine</h3>
+            <p>Moteur de jeu OpenGL créé de zéro.  
+            Architecture, optimisation, rendu et système de shaders.</p>
+          </a>
+        </div>
+      </section>
 
-        <a class="project" data-id="hainedjinn" href="projects/hainedjinn.html">
-          <h3>HaineDjinn Engine</h3>
-          <p>Moteur de jeu OpenGL créé de zéro.  
-          Architecture, optimisation, rendu et système de shaders.</p>
-        </a>
-      </div>
-    </section>
+      <section>
+        <h2 id="exp-title">💼 Expériences</h2><br>
+        <ul id="exp">
+          <li><b>Orbital Views</b> — Développeur 3D (2023–2025)  
+            <br>Optimisation de rendu, gameplay, R&D de nouvelles technologies.</li>
+          <li><b>Tkorp</b> — Développeur VR/AR (2023)  
+            <br>R&D VR/AR, Netcode multijoueur, gestion cross-platform.</li>
+          <li><b>WWF</b> — Communication jeu vidéo (2021)  
+            <br>Étude sur la visibilité et les dons dans le monde du jeu vidéo.</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2 id="exp-title">💼 Expériences</h2><br>
-      <ul id="exp">
-        <li><b>Orbital Views</b> — Développeur 3D (2023–2025)  
-          <br>Optimisation de rendu, gameplay, R&D de nouvelles technologies.</li>
-        <li><b>Tkorp</b> — Développeur VR/AR (2023)  
-          <br>R&D VR/AR, Netcode multijoueur, gestion cross-platform.</li>
-        <li><b>WWF</b> — Communication jeu vidéo (2021)  
-          <br>Étude sur la visibilité et les dons dans le monde du jeu vidéo.</li>
-      </ul>
-    </section>
+      <!-- CV SECTION -->
+      <section class="cv" id="cv-section" style="text-align:center; margin-bottom:60px;">
+        <a id="cvBtn" href="docs/CV_Maxence_Retier.pdf" target="_blank" class="btn-cv">📄 Télécharger mon CV</a>
+      </section>
 
-    <!-- CV SECTION -->
-    <section class="cv" id="cv-section" style="text-align:center; margin-bottom:60px;">
-      <a id="cvBtn" href="docs/CV_Maxence_Retier.pdf" target="_blank" class="btn-cv">📄 Télécharger mon CV</a>
-    </section>
+      <section class="socials">
+        <h2 id="contact-title">📫 Contact</h2><br>
+        <a href="mailto:maxence.retier@gmail.com">Email</a>
+        <a href="https://github.com/xarmy7" target="_blank">GitHub</a>
+        <a href="https://xarmy7.itch.io/" target="_blank">Itch.io</a>
+        <a href="https://www.linkedin.com/in/maxence-retier-1313ba211/" target="_blank">LinkedIn</a>
+      </section>
+    </main>
 
-    <section class="socials">
-      <h2 id="contact-title">📫 Contact</h2><br>
-      <a href="mailto:maxence.retier@gmail.com">Email</a>
-      <a href="https://github.com/xarmy7" target="_blank">GitHub</a>
-      <a href="https://xarmy7.itch.io/" target="_blank">Itch.io</a>
-      <a href="https://www.linkedin.com/in/maxence-retier-1313ba211/" target="_blank">LinkedIn</a>
-    </section>
-  </main>
-
-  <footer id="footer">
-    © 2025 Maxence Retier — Portfolio créé avec Github.
-  </footer>
-
-  <!-- SCRIPT: particules + traduction + CV -->
-  <script>
-    const canvas = document.getElementById("background");
-    const ctx = canvas.getContext("2d");
-    let particles = [];
-    const particleCount = 80;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
-    class Particle {
-      constructor() { this.reset(); }
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.3;
-        this.speedY = (Math.random() - 0.5) * 0.3;
-        this.alpha = Math.random() * 0.5 + 0.3;
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(88,166,255,${this.alpha})`;
-        ctx.fill();
-      }
-    }
-
-    for (let i=0;i<particleCount;i++) particles.push(new Particle());
-    function animate() {
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      particles.forEach(p=>{p.update();p.draw();});
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    document.addEventListener("mousemove", e => {
-      const moveX = (e.clientX / window.innerWidth - 0.5) * 2;
-      const moveY = (e.clientY / window.innerHeight - 0.5) * 2;
-      canvas.style.transform = `translate(${moveX*10}px, ${moveY*10}px)`;
-    });
-
-    /* === TRADUCTION ET CV === */
-    document.addEventListener("DOMContentLoaded", () => {
-      const langBtn = document.getElementById("langBtn");
-      let currentLang = "fr";
-      const translations = {
-        en: {
-          bio: "Passionate about video game development, graduated from Isart Digital in Game Programming. I have two years of experience working on immersive 3D, VR and AR projects. I love designing innovative and fun-to-play experiences where technology meets creativity.",
-          projectsTitle: "🕹️ Projects",
-          expTitle: "💼 Experiences",
-          contactTitle: "📫 Contact",
-          footer: "© 2025 Maxence Retier — Portfolio made with Github.",
-          langBtn: "Français 🇫🇷",
-          cvBtn: "📄 Download my CV",
-          exp: [
-            "<b>Orbital Views</b> — 3D Developer (2023–2025)<br>Rendering optimization, gameplay development, R&D of new technologies.",
-            "<b>Tkorp</b> — VR/AR Developer (2023)<br>VR/AR research, multiplayer netcode, cross-platform management.",
-            "<b>WWF</b> — Video Game Communication (2021)<br>Study on visibility and donations in the gaming world."
-          ],
-          projects: {
-            raymarching: "3D visualization of molten glass with raymarching and compute shaders (Vulkan). Collaboration with LORIA, real-time rendering and transparency/reflection effects.",
-            parallax: "OpenGL engine and Parallax Mapping shader developed from scratch.",
-            scout: "Graduation game created with 19 people. AI in C++, production tools, custom shaders.",
-            padel: "Local multiplayer VR game (Unity + Mirror). Network management and multi-headset support.",
-            hainedjinn: "OpenGL game engine built from scratch. Architecture, optimization, rendering, and shader system."
-          }
-        },
-        fr: {
-          bio: "Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming, je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR. J’aime concevoir des expériences innovantes et fun à jouer, où la technique rencontre la créativité.",
-          projectsTitle: "🕹️ Projets",
-          expTitle: "💼 Expériences",
-          contactTitle: "📫 Contact",
-          footer: "© 2025 Maxence Retier — Portfolio créé avec Github.",
-          langBtn: "English 🇬🇧",
-          cvBtn: "📄 Télécharger mon CV",
-          exp: [
-            "<b>Orbital Views</b> — Développeur 3D (2023–2025)<br>Optimisation de rendu, gameplay, R&D de nouvelles technologies.",
-            "<b>Tkorp</b> — Développeur VR/AR (2023)<br>R&D VR/AR, Netcode multijoueur, gestion cross-platform.",
-            "<b>WWF</b> — Communication jeu vidéo (2021)<br>Étude sur la visibilité et les dons dans le monde du jeu vidéo."
-          ],
-          projects: {
-            raymarching: "Visualisation 3D du verre fondu avec raymarching et compute shaders (Vulkan). Collaboration avec le LORIA, rendu temps réel et effets de transparence/réflexion.",
-            parallax: "OpenGL engine et shader de Parallax Mapping développés from scratch.",
-            scout: "Jeu de fin d’étude réalisé avec 19 personnes. IA en C++, outils de production, shaders personnalisés.",
-            padel: "Jeu VR multijoueur local (Unity + Mirror). Gestion réseau et compatibilité multi-casques.",
-            hainedjinn: "Moteur de jeu OpenGL créé de zéro. Architecture, optimisation, rendu et système de shaders."
-          }
-        }
-      };
-
-      langBtn.addEventListener("click", () => {
-        currentLang = currentLang === "fr" ? "en" : "fr";
-        const t = translations[currentLang];
-
-        // bio et titles
-        document.getElementById("bio").innerHTML = `<p>${t.bio}</p>`;
-        document.getElementById("projects-title").textContent = t.projectsTitle;
-        document.getElementById("exp-title").textContent = t.expTitle;
-        document.getElementById("contact-title").textContent = t.contactTitle;
-        document.getElementById("footer").textContent = t.footer;
-        langBtn.textContent = t.langBtn;
-
-        // CV button
-        document.getElementById("cvBtn").textContent = t.cvBtn;
-
-        // experiences
-        const expItems = document.querySelectorAll("#exp li");
-        expItems.forEach((li, i) => { if(t.exp[i]) li.innerHTML = t.exp[i]; });
-
-        // Projects
-        const projectItems = document.querySelectorAll(".project");
-        projectItems.forEach(project => {
-          const id = project.dataset.id.toLowerCase();
-          const projects = {};
-          Object.keys(t.projects).forEach(key => { projects[key.toLowerCase()] = t.projects[key]; });
-          if(projects[id]) project.querySelector("p").innerHTML = projects[id];
-        });
-      });
-    });
-  </script>
-
-</body>
+    <footer id="footer">
+      © 2025 Maxence Retier — Portfolio créé avec Github.
+    </footer>
+    <script src="js/lang.js"></script>
+  </body>
 </html>
