@@ -34,7 +34,6 @@ const translations = {
       itchLink: "See on itch.io →"
     }
   },
-  
 
   fr: {
     bio: "Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming, je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR. J’aime concevoir des expériences innovantes et fun à jouer, où la technique rencontre la créativité.",
@@ -66,27 +65,33 @@ const translations = {
       workPerf: "⚙️ <b>Optimisation des performances :</b><br><p class='indent'>• Réduction des draw calls de ~9000 à ~1300.</p><p class='indent'>• Bake des lumières (90% statiques).</p><p class='indent'>• Migration Deferred → Forward Shading pour un rendu plus fluide.</p>",
       skillsText: "Ce projet m’a permis de renforcer mes compétences en <b>programmation IA</b> et <b>gameplay</b> sur Unreal Engine, ainsi qu’en <b>optimisation technique</b> pour consoles.",
       itchLink: "Voir sur itch.io →"
+    }
   }
 };
 
-// === Fonction pour appliquer la langue ===
 function applyLanguage(lang) {
   const t = translations[lang];
   if (!t) return;
 
-  // language button
-  const langBtn = document.getElementById("langBtn");
-  if (langBtn) langBtn.textContent = t.langBtn;
-
-  // Footer
-  const footer = document.getElementById("footer");
-  if (footer) footer.textContent = t.footer;
-
-  // Back button
-  const backBtn = document.getElementById("backBtn");
-  if (backBtn) backBtn.textContent = t.backBtn;
-
-  // Detect scout page
+  // Bio and titles
+  if (document.getElementById("bio")) {
+    document.getElementById("bio").innerHTML = `<p>${t.bio}</p>`;
+  }
+  if (document.getElementById("projects-title")) {
+    document.getElementById("projects-title").textContent = t.projectsTitle;
+  }
+  if (document.getElementById("exp-title")) {
+    document.getElementById("exp-title").textContent = t.expTitle;
+  }
+  if (document.getElementById("contact-title")) {
+    document.getElementById("contact-title").textContent = t.contactTitle;
+  }
+  if (document.getElementById("footer")) {
+    document.getElementById("footer").textContent = t.footer;
+  }
+  if (document.getElementById("cvBtn")) {
+    document.getElementById("cvBtn").textContent = t.cvBtn;
+  }
   if (document.getElementById("projectTitle") && document.getElementById("contextText")) {
     const pageTrans = t.scoutPage;
     if (!pageTrans) return;
@@ -96,12 +101,28 @@ function applyLanguage(lang) {
     });
   }
 
-  // Sauvegarder la préférence
+  // Experiences
+  const expItems = document.querySelectorAll("#exp li");
+  expItems.forEach((li, i) => { if (t.exp[i]) li.innerHTML = t.exp[i]; });
+
+  // Projects
+  const projectItems = document.querySelectorAll(".project");
+  projectItems.forEach(project => {
+    const id = project.dataset.id ? project.dataset.id.toLowerCase() : null;
+    if (id && t.projects[id]) {
+      project.querySelector("p").innerHTML = t.projects[id];
+    }
+  });
+
+  // Update button
+  const langBtn = document.getElementById("langBtn");
+  if (langBtn) langBtn.textContent = t.langBtn;
+
+  // Save
   localStorage.setItem("lang", lang);
 }
 
-// === Initialisation au chargement ===
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   let currentLang = localStorage.getItem("lang") || "fr";
   applyLanguage(currentLang);
 
@@ -113,3 +134,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// document.addEventListener("DOMContentLoaded", () => {
+//   const langBtn = document.getElementById("langBtn");
+//   let currentLang = localStorage.getItem("lang") || "fr";
+
+//   applyLanguage(currentLang);
+
+//   if (langBtn) {
+//     langBtn.addEventListener("click", () => {
+//       currentLang = currentLang === "fr" ? "en" : "fr";
+//       applyLanguage(currentLang);
+//     });
+//   }
+// });
