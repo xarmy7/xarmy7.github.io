@@ -116,23 +116,63 @@ function applyLanguage(lang) {
   if (document.getElementById("cvBtn")) {
     document.getElementById("cvBtn").textContent = t.cvBtn;
   }
-  // Detect specific project pages
-  if (document.getElementById("projectTitle") && document.getElementById("contextText")) {
-    let pageTrans = null;
+  // Detect specific project pages (robuste)
+let pageTrans = null;
 
-  if (document.body.classList.contains("scout-page")) {
-    pageTrans = t.scoutPage;
-  } else if (document.body.classList.contains("raymarching-page")) {
-    pageTrans = t.raymarchingPage;
+// 1) Détection par classe body (ex: <body class="raymarching-page">)
+try {
+  const body = document.body;
+  if (body && body.classList) {
+    if (body.classList.contains("scout-page")) {
+      pageTrans = t.scoutPage;
+      console.log("[lang] detected page by class: scout-page");
+    } else if (body.classList.contains("raymarching-page")) {
+      pageTrans = t.raymarchingPage;
+      console.log("[lang] detected page by class: raymarching-page");
+    }
   }
+} catch (e) {
+  console.warn("[lang] error reading body.classList", e);
+}
 
-  if (pageTrans) {
-    Object.keys(pageTrans).forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.innerHTML = pageTrans[id];
-    });
+// 2) Détection par attribut data-page (ex: <body data-page="raymarching">)
+if (!pageTrans) {
+  const pageAttr = document.body && document.body.dataset ? document.body.dataset.page : null;
+  if (pageAttr) {
+    const key = pageAttr.trim().toLowerCase();
+    if (key === "scout" && t.scoutPage) {
+      pageTrans = t.scoutPage;
+      console.log("[lang] detected page by data-page: scout");
+    } else if (key === "raymarching" && t.raymarchingPage) {
+      pageTrans = t.raymarchingPage;
+      console.log("[lang] detected page by data-page: raymarching");
+    }
   }
 }
+
+// 3) Détection par URL (ex: '/projects/raymarching.html' ou '/raymarching/')
+if (!pageTrans) {
+  const path = window.location.pathname.toLowerCase();
+  if (path.includes("scout")) {
+    pageTrans = t.scoutPage;
+    console.log("[lang] detected page by URL: scout");
+  } else if (path.includes("raymarching")) {
+    pageTrans = t.raymarchingPage;
+    console.log("[lang] detected page by URL: raymarching");
+  }
+}
+
+// 4) Appliquer si trouvé
+if (pageTrans) {
+  Object.keys(pageTrans).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = pageTrans[id];
+    else console.warn(`[lang] element with id "${id}" not found on page`);
+  });
+} else {
+  console.log("[lang] no page-specific translation applied");
+}
+
   // if (document.getElementById("projectTitle") && document.getElementById("contextText")) {
   //   const pageTrans = t.scoutPage;
   //   if (!pageTrans) return;
