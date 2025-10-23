@@ -34,6 +34,16 @@ const translations = {
       skillsTitle: "🚀 Skills acquired",
       skillsText: "This project strengthened my skills in <b>AI programming</b> and <b>gameplay</b> in Unreal Engine, as well as <b>technical optimization</b> for consoles.",
       itchLink: "See on itch.io →"
+    },
+    raymarchingPage: {
+      contexteTitle: "🔬 Context",
+      contexteText: "This research project, entitled <b>3D Visualization of Molten Glass using Raymarching Technique</b>, was carried out in collaboration with <b>LORIA</b> (Lorraine Laboratory for Research in Computer Science and its Applications) as part of the <b>GPU Option – ISART Digital</b> program.<br><br>The objective was to design a <b>real-time rendering engine</b> capable of simulating the visual behavior of <b>molten glass</b> without resorting to explicit geometry. The project is part of an approach to <b>preserving artisanal know-how</b> and <b>technological innovation</b>, aiming to provide an immersive tool for glassmaking training using augmented reality.",
+      workTitle: "🧩 My work",
+      workRendering: "💡 <b>Raymarching and Implicit Rendering:</b><br>Complete development of the <b>raymarching pipeline</b> in <b>Vulkan</b>, based on <b>Signed Distance Functions (SDF)</b> to represent implicit deformable surfaces (spheres, tori, metaballs). Implementation of <b>surface blending</b> to reproduce the organic fusion of molten glass and its fluid visual behavior.",
+      workTransparency: "🌫️ <b>Transparency and Refraction:</b><br>Integrated a <b>light transmission and absorption</b> model simulating the translucency of glass. Application of <b>light reflection, refraction, and attenuation</b> effects dependent on the refractive index, resulting in a realistic and dynamic visual appearance.",
+      workPerf: "⚙️ <b>GPU Optimization:</b><br>Pipeline migration from <b>fragment shaders</b> to <b>compute shaders</b> for direct control of parallel computing and better memory management. Performance improvements via <b>hierarchical spatial partitioning (Binary Tree)</b> to speed up distance evaluations and reduce the number of calculations per ray.",
+      resultTitle: "🚀 Result and prospects",
+      resultText: "The engine now allows for <b>real-time visualization</b> of implicit semi-transparent surfaces with realistic <b>Phong + Fresnel</b> lighting. The switch to compute shaders has significantly improved GPU performance, while paving the way for the future integration of <b>volumetric data</b> or <b>3D point clouds</b>. This work lays the foundation for <b>interactive molten glass simulation</b>, paving the way for applications in <b>craft training</b> and <b>advanced graphics research</b>."
     }
   },
 
@@ -69,6 +79,16 @@ const translations = {
       skillsTitle: "🚀 Les compétences acquises",
       skillsText: "Ce projet m’a permis de renforcer mes compétences en <b>programmation IA</b> et <b>gameplay</b> sur Unreal Engine, ainsi qu’en <b>optimisation technique</b> pour consoles.",
       itchLink: "Voir sur itch.io →"
+    },
+    raymarchingPage: {
+      contexteTitle: "🔬 Contexte",
+      contexteText: "Ce projet de recherche, intitulé <b>3D Visualisation of Molten Glass using Raymarching Technique</b>, a été réalisé en collaboration avec le <b>LORIA</b> (Laboratoire Lorrain de Recherche en Informatique et ses Applications) dans le cadre du programme <b>GPU Option – ISART Digital</b>.<br><br>L’objectif était de concevoir un <b>moteur de rendu temps réel</b> capable de simuler le comportement visuel du <b>verre en fusion</b> sans recourir à une géométrie explicite. Le projet s’inscrit dans une démarche de <b>préservation des savoir-faire artisanaux</b> et d’<b>innovation technologique</b>, visant à fournir un outil immersif pour la formation à la verrerie en réalité augmentée.",
+      workTitle: "🧩 Mon travail",
+      workRendering: "💡 <b>Raymarching et rendu implicite :</b><br>Développement complet du <b>pipeline de raymarching</b> sous <b>Vulkan</b>, basé sur des <b>Signed Distance Functions (SDF)</b> pour représenter des surfaces implicites déformables (sphères, tori, métaballes). Implémentation du <b>blending entre surfaces</b> pour reproduire la fusion organique du verre fondu et de son comportement visuel fluide.",
+      workTransparency: "🌫️ <b>Transparence et réfraction :</b><br>Intégration d’un modèle de <b>transmission et d’absorption lumineuse</b> simulant la translucidité du verre. Application d’effets de <b>réflexion, refraction et atténuation lumineuse</b> dépendant de l’indice de réfraction, permettant d’obtenir une apparence visuelle réaliste et dynamique.",
+      workPerf: "⚙️ <b>Optimisation GPU :</b><br>Migration du pipeline depuis les <b>fragment shaders</b> vers les <b>compute shaders</b> pour un contrôle direct du calcul parallèle et une meilleure gestion mémoire. Amélioration des performances via une <b>partition spatiale hiérarchique (Binary Tree)</b> pour accélérer les évaluations de distance et réduire le nombre de calculs par rayon.",
+      resultTitle: "🚀 Resultats et perspectives",
+      resultText: "Le moteur permet aujourd’hui de <b>visualiser en temps réel</b> des surfaces implicites semi-transparentes avec un éclairage <b>Phong + Fresnel</b> réaliste. Le passage aux compute shaders a amélioré les performances GPU de manière significative, tout en préparant l’intégration future de <b>données volumétriques</b> ou de <b>nuages de points 3D</b>. Ce travail pose les bases d’une <b>simulation de verre en fusion interactive</b>, ouvrant la voie à des applications dans la <b>formation artisanale</b> et la <b>recherche graphique avancée</b>."
     }
   }
 };
@@ -96,14 +116,31 @@ function applyLanguage(lang) {
   if (document.getElementById("cvBtn")) {
     document.getElementById("cvBtn").textContent = t.cvBtn;
   }
+  // Detect specific project pages
   if (document.getElementById("projectTitle") && document.getElementById("contextText")) {
-    const pageTrans = t.scoutPage;
-    if (!pageTrans) return;
+    let pageTrans = null;
+
+  if (document.body.classList.contains("scout-page")) {
+    pageTrans = t.scoutPage;
+  } else if (document.body.classList.contains("raymarching-page")) {
+    pageTrans = t.raymarchingPage;
+  }
+
+  if (pageTrans) {
     Object.keys(pageTrans).forEach(id => {
       const el = document.getElementById(id);
       if (el) el.innerHTML = pageTrans[id];
     });
   }
+}
+  // if (document.getElementById("projectTitle") && document.getElementById("contextText")) {
+  //   const pageTrans = t.scoutPage;
+  //   if (!pageTrans) return;
+  //   Object.keys(pageTrans).forEach(id => {
+  //     const el = document.getElementById(id);
+  //     if (el) el.innerHTML = pageTrans[id];
+  //   });
+  // }
 
   // Experiences
   const expItems = document.querySelectorAll("#exp li");
