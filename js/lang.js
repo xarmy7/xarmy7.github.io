@@ -23,14 +23,14 @@ const translations = {
       hainedjinn: "OpenGL game engine built from scratch. Architecture, optimization, rendering, and shader system."
     },
     scoutPage: {
-      contextTitle: "Context",
-      contextText: "<b>What the Scout?!</b> is a <b>party game</b> developed in <b>Unreal Engine 4.27</b> for <b>PS4</b> as a final project at <b>ISART Digital</b>.</br> The player controls a scout leader in charge of saving a group of uncontrollable children from absurdly spectacular deaths. The game relies on <b>autonomous and chaotic AI</b>, generating humorous and unpredictable situations.",
+      contextTitle: "🎮 Context",
+      contextText: "<b>What the Scout?!</b> is a <b>party game</b> developed in <b>Unreal Engine 4.27</b> for <b>PS4</b> as a final project at <b>ISART Digital</b>.</br> The player controls a scout leader in charge of saving a group of uncontrollable children from absurdly spectacular deaths. The game relies on <b>autonomous and chaotic AI</b>, generating humorous and unpredictable situations.</br>",
       teamText: "The team had 19 members: 2 producers, 2 sound designers, 3 game designers & programmers, 4 game designers, 4 3D artists, 2 2D artists, and 2 game programmers.",
-      workTitle: "My work",
-      workAI: "🧠 AI: Designed a modular and parameterized system based on weighted probabilities (Data Tables), generating varied and unpredictable behaviors.",
-      workTools: "🧰 Production Tools: Created generic Blueprints and editor tools for designers to adjust and test AI behaviors.",
-      workShader: "🎨 Outline Shader: Developed an optimized shader to improve readability of characters.",
-      workPerf: "⚙️ Performance optimization:<br><p class='indent'>• Reduced draw calls from ~9000 to ~1300.</p><p class='indent'>• Baked 90% of lights.</p><p class='indent'>• Migrated Deferred → Forward Shading for smoother rendering.</p>",
+      workTitle: "🧩 My work",
+      workAI: "🧠 <b>Artificial Intelligence:</b> Designed a modular and parameterized system based on <b>weighted probabilities (Data Tables)</b>, generating varied and unpredictable behaviors.",
+      workTools: "🧰 <b>Production Tools:</b> Created <b>generic Blueprints</b> and editor tools for designers to adjust and test AI behaviors.",
+      workShader: "🎨 <b>Outline Shader:</b> Developed an optimized shader to improve readability of characters.",
+      workPerf: "⚙️ <b>Performance optimization:<b><br><p class='indent'>• Reduced <b>draw calls</b> from ~9000 to ~1300.</p><p class='indent'>• <b>Bake lights</b> (90% static) to stabilize rendering on PS4.</p><p class='indent'>• Migrated <b>Deferred → Forward Shading</b> for better performances and smoother rendering.</p>",
       skillsText: "This project strengthened my skills in AI programming and gameplay in Unreal Engine, as well as technical optimization for consoles.",
       itchLink: "See on itch.io →"
     }
