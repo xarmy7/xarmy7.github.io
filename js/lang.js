@@ -66,6 +66,7 @@ const translations = {
       workTools: "🧰 <b>Outils de production :</b> création de <b>Blueprints génériques</b> et d’outils d’édition pour ajuster et tester les comportements IA.",
       workShader: "🎨 <b>Outline Shader :</b> développement d’un shader optimisé pour améliorer la lisibilité des personnages.",
       workPerf: "⚙️ <b>Optimisation des performances :</b><br><p class='indent'>• Réduction des draw calls de ~9000 à ~1300.</p><p class='indent'>• Bake des lumières (90% statiques).</p><p class='indent'>• Migration Deferred → Forward Shading pour un rendu plus fluide.</p>",
+      skillsTitle: "🚀 Les compétences acquises",
       skillsText: "Ce projet m’a permis de renforcer mes compétences en <b>programmation IA</b> et <b>gameplay</b> sur Unreal Engine, ainsi qu’en <b>optimisation technique</b> pour consoles.",
       itchLink: "Voir sur itch.io →"
     }
