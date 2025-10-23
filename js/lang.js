@@ -43,7 +43,9 @@ const translations = {
       workTransparency: "🌫️ <b>Transparency and Refraction:</b><br>Integrated a <b>light transmission and absorption</b> model simulating the translucency of glass. Application of <b>light reflection, refraction, and attenuation</b> effects dependent on the refractive index, resulting in a realistic and dynamic visual appearance.",
       workPerf: "⚙️ <b>GPU Optimization:</b><br>Pipeline migration from <b>fragment shaders</b> to <b>compute shaders</b> for direct control of parallel computing and better memory management. Performance improvements via <b>hierarchical spatial partitioning (Binary Tree)</b> to speed up distance evaluations and reduce the number of calculations per ray.",
       resultTitle: "🚀 Result and prospects",
-      resultText: "The engine now allows for <b>real-time visualization</b> of implicit semi-transparent surfaces with realistic <b>Phong + Fresnel</b> lighting. The switch to compute shaders has significantly improved GPU performance, while paving the way for the future integration of <b>volumetric data</b> or <b>3D point clouds</b>. This work lays the foundation for <b>interactive molten glass simulation</b>, paving the way for applications in <b>craft training</b> and <b>advanced graphics research</b>."
+      resultText: "The engine now allows for <b>real-time visualization</b> of implicit semi-transparent surfaces with realistic <b>Phong + Fresnel</b> lighting. The switch to compute shaders has significantly improved GPU performance, while paving the way for the future integration of <b>volumetric data</b> or <b>3D point clouds</b>. This work lays the foundation for <b>interactive molten glass simulation</b>, paving the way for applications in <b>craft training</b> and <b>advanced graphics research</b>.",
+      gitLink: "See on GithHub →",
+      paperLink: "See the research paper →"
     }
   },
 
