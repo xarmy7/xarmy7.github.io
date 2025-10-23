@@ -90,7 +90,9 @@ const translations = {
       workTransparency: "🌫️ <b>Transparence et réfraction :</b><br>Intégration d’un modèle de <b>transmission et d’absorption lumineuse</b> simulant la translucidité du verre. Application d’effets de <b>réflexion, refraction et atténuation lumineuse</b> dépendant de l’indice de réfraction, permettant d’obtenir une apparence visuelle réaliste et dynamique.",
       workPerf: "⚙️ <b>Optimisation GPU :</b><br>Migration du pipeline depuis les <b>fragment shaders</b> vers les <b>compute shaders</b> pour un contrôle direct du calcul parallèle et une meilleure gestion mémoire. Amélioration des performances via une <b>partition spatiale hiérarchique (Binary Tree)</b> pour accélérer les évaluations de distance et réduire le nombre de calculs par rayon.",
       resultTitle: "🚀 Resultats et perspectives",
-      resultText: "Le moteur permet aujourd’hui de <b>visualiser en temps réel</b> des surfaces implicites semi-transparentes avec un éclairage <b>Phong + Fresnel</b> réaliste. Le passage aux compute shaders a amélioré les performances GPU de manière significative, tout en préparant l’intégration future de <b>données volumétriques</b> ou de <b>nuages de points 3D</b>. Ce travail pose les bases d’une <b>simulation de verre en fusion interactive</b>, ouvrant la voie à des applications dans la <b>formation artisanale</b> et la <b>recherche graphique avancée</b>."
+      resultText: "Le moteur permet aujourd’hui de <b>visualiser en temps réel</b> des surfaces implicites semi-transparentes avec un éclairage <b>Phong + Fresnel</b> réaliste. Le passage aux compute shaders a amélioré les performances GPU de manière significative, tout en préparant l’intégration future de <b>données volumétriques</b> ou de <b>nuages de points 3D</b>. Ce travail pose les bases d’une <b>simulation de verre en fusion interactive</b>, ouvrant la voie à des applications dans la <b>formation artisanale</b> et la <b>recherche graphique avancée</b>.",
+      gitLink: "Voir sur GithHub →",
+      paperLink: "Voir le document de recherche →"
     }
   }
 };
