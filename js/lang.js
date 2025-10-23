@@ -32,7 +32,7 @@ const translations = {
       workShader: "🎨 <b>Outline Shader:</b> Developed an optimized shader to improve readability of characters.",
       workPerf: "⚙️ <b>Performance optimization:</b><br><p class='indent'>• Reduced <b>draw calls</b> from ~9000 to ~1300.</p><p class='indent'>• <b>Bake lights</b> (90% static) to stabilize rendering on PS4.</p><p class='indent'>• Migrated <b>Deferred → Forward Shading</b> for better performances and smoother rendering.</p>",
       skillsTitle: "🚀 Skills acquired",
-      skillsText: "This project strengthened my skills in AI programming and gameplay in Unreal Engine, as well as technical optimization for consoles.",
+      skillsText: "This project strengthened my skills in <b>AI programming</b> and <b>gameplay</b> in Unreal Engine, as well as <b>technical optimization</b> for consoles.",
       itchLink: "See on itch.io"
     }
   },
