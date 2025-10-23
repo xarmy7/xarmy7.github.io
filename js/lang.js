@@ -23,8 +23,10 @@ const translations = {
       hainedjinn: "OpenGL game engine built from scratch. Architecture, optimization, rendering, and shader system."
     },
     scoutPage: {
-      contextText: "<b>What the Scout?!</b> is a <b>party game</b> developed in <b>Unreal Engine 4.27</b> for <b>PS4</b> as a final project at <b>ISART Digital</b>.</br> The player controls a scout leader in charge of saving a group of uncontrollable children from absurdly spectacular deaths. The game relies on <b>autonomous and chaotic AI</b>, generating humorous and unpredictable situations.</br> The team was composed of <b>19 members</b>, including:</br>2 producers, 2 sound designers, 3 game designers & programmers,</br>4 game designers, 4 artistes 3D, 2 artistes 2D,</br> and 2 game programmers",
+      contextTitle: "Context",
+      contextText: "<b>What the Scout?!</b> is a <b>party game</b> developed in <b>Unreal Engine 4.27</b> for <b>PS4</b> as a final project at <b>ISART Digital</b>.</br> The player controls a scout leader in charge of saving a group of uncontrollable children from absurdly spectacular deaths. The game relies on <b>autonomous and chaotic AI</b>, generating humorous and unpredictable situations.",
       teamText: "The team had 19 members: 2 producers, 2 sound designers, 3 game designers & programmers, 4 game designers, 4 3D artists, 2 2D artists, and 2 game programmers.",
+      workTitle: "My work",
       workAI: "🧠 AI: Designed a modular and parameterized system based on weighted probabilities (Data Tables), generating varied and unpredictable behaviors.",
       workTools: "🧰 Production Tools: Created generic Blueprints and editor tools for designers to adjust and test AI behaviors.",
       workShader: "🎨 Outline Shader: Developed an optimized shader to improve readability of characters.",
