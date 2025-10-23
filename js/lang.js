@@ -24,7 +24,7 @@ const translations = {
     },
     scoutPage: {
       contextTitle: "🎮 Context",
-      contextText: "<b>What the Scout?!</b> is a <b>party game</b> developed in <b>Unreal Engine 4.27</b> for <b>PS4</b> as a final project at <b>ISART Digital</b>.</br> The player controls a scout leader in charge of saving a group of uncontrollable children from absurdly spectacular deaths. The game relies on <b>autonomous and chaotic AI</b>, generating humorous and unpredictable situations.</br>",
+      contextText: "<b>What the Scout?!</b> is a <b>party game</b> developed in <b>Unreal Engine 4.27</b> for <b>PS4</b> as a final project at <b>ISART Digital</b>.</br> The player controls a scout leader in charge of saving a group of uncontrollable children from absurdly spectacular deaths. The game relies on <b>autonomous and chaotic AI</b>, generating humorous and unpredictable situations. </br>",
       teamText: "The team had 19 members: 2 producers, 2 sound designers, 3 game designers & programmers, 4 game designers, 4 3D artists, 2 2D artists, and 2 game programmers.",
       workTitle: "🧩 My work",
       workAI: "🧠 <b>Artificial Intelligence:</b> Designed a modular and parameterized system based on <b>weighted probabilities (Data Tables)</b>, generating varied and unpredictable behaviors.",
