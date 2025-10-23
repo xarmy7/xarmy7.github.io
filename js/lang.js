@@ -33,7 +33,7 @@ const translations = {
       workPerf: "⚙️ <b>Performance optimization:</b><br><p class='indent'>• Reduced <b>draw calls</b> from ~9000 to ~1300.</p><p class='indent'>• <b>Bake lights</b> (90% static) to stabilize rendering on PS4.</p><p class='indent'>• Migrated <b>Deferred → Forward Shading</b> for better performances and smoother rendering.</p>",
       skillsTitle: "🚀 Skills acquired",
       skillsText: "This project strengthened my skills in <b>AI programming</b> and <b>gameplay</b> in Unreal Engine, as well as <b>technical optimization</b> for consoles.",
-      itchLink: "See on itch.io"
+      itchLink: "See on itch.io →"
     }
   },
 
@@ -67,7 +67,7 @@ const translations = {
       workShader: "🎨 <b>Outline Shader :</b> développement d’un shader optimisé pour améliorer la lisibilité des personnages.",
       workPerf: "⚙️ <b>Optimisation des performances :</b><br><p class='indent'>• Réduction des draw calls de ~9000 à ~1300.</p><p class='indent'>• Bake des lumières (90% statiques).</p><p class='indent'>• Migration Deferred → Forward Shading pour un rendu plus fluide.</p>",
       skillsText: "Ce projet m’a permis de renforcer mes compétences en <b>programmation IA</b> et <b>gameplay</b> sur Unreal Engine, ainsi qu’en <b>optimisation technique</b> pour consoles.",
-      itchLink: "Voir sur itch.io"
+      itchLink: "Voir sur itch.io →"
     }
   }
 };
