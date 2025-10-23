@@ -57,8 +57,10 @@ const translations = {
       hainedjinn: "Moteur de jeu OpenGL créé de zéro. Architecture, optimisation, rendu et système de shaders."
     },
     scoutPage: {
+      contextTitle: "🎮 Contexte",
       contextText: "<b>What the Scout?!</b> est un <b>party game</b> développé sur <b>Unreal Engine 4.27</b> pour <b>PS4</b>, dans le cadre du projet de fin d’études à <b>ISART Digital</b>.<br><br>Le joueur incarne un chef scout chargé de sauver un groupe d’enfants incontrôlables d’une mort aussi absurde que spectaculaire. Le jeu repose sur une <b>IA autonome et chaotique</b>, générant des situations comiques et imprévisibles à chaque partie.",
       teamText: "L’équipe comptait <b>19 membres</b>, incluant : 2 producers, 2 sound designers, 3 game designers & programmers, 4 game designers, 4 artistes 3D, 2 artistes 2D, et 2 game programmers.",
+      workTitle: "🧩 Mon travail",
       workAI: "🧠 <b>Intelligence artificielle :</b> conception d’un système modulaire et paramétrable basé sur des <b>probabilités pondérées (Data Tables)</b>, générant des comportements variés et imprévisibles.",
       workTools: "🧰 <b>Outils de production :</b> création de <b>Blueprints génériques</b> et d’outils d’édition pour ajuster et tester les comportements IA.",
       workShader: "🎨 <b>Outline Shader :</b> développement d’un shader optimisé pour améliorer la lisibilité des personnages.",
