@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parallax Mapping | Maxence Retier</title>
   <link rel="stylesheet" href="../style.css" />
+  
+  <button id="langBtn">English 🇬🇧</button>
+ 
   <style>
     body {
       background: radial-gradient(circle at 30% 10%, #0d1117, #010409);
@@ -12,17 +15,19 @@
       font-family: 'Inter', system-ui, sans-serif;
       line-height: 1.7;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
 
     main {
       max-width: 900px;
-      margin: 80px auto;
+      margin: 40px auto;
       padding: 0 1rem 100px;
       animation: fadeIn 0.8s ease;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #f0f6fc;
       margin-bottom: 1rem;
       letter-spacing: 1px;
@@ -30,24 +35,8 @@
 
     .project-header {
       text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .project-header img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 16px;
-      margin: 20px 10px;
-      box-shadow: 0 0 20px rgba(56, 139, 253, 0.25);
-      transform: scale(1);
-      transition: all 0.3s ease;
-      opacity: 0.9;
-    }
-
-    .project-header img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 35px rgba(56, 139, 253, 0.45);
-      opacity: 1;
+      margin-bottom: 30px;
+      padding: 0 1rem;
     }
 
     .back-btn {
@@ -69,8 +58,33 @@
       transform: translateY(-2px);
     }
 
+    /* --- Picture gallery style --- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+      margin: 10px auto;
+      padding: 0 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid #21262d;
+      background: #0d1117;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(56, 139, 253, 0.25);
+    }
+
     main p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: #c9d1d9;
       margin-bottom: 1.2rem;
     }
@@ -98,6 +112,7 @@
       color: #58a6ff;
     }
 
+    /* --- Button--- */
     a[target="_blank"] {
       display: inline-block;
       background: #238636;
@@ -123,14 +138,35 @@
       margin-top: 60px;
     }
 
+    /* --- Animation --- */
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
+        from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Picture slider --- */
+    @media (max-width: 768px) {
+      .gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding: 10px 1rem;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .gallery img {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        border-radius: 10px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .video-container {
+        margin: 25px auto;
+        border-radius: 12px;
       }
     }
   </style>
@@ -150,20 +186,61 @@
     <!-- <img src="../images/parallaxGround.gif" alt="4K Parallax Mapping Shader" /> -->
   </header>
 
+  <!-- Picture Gallery -->
+  <div class="gallery">
+    <img src="../images/parallaxWall.gif.gif" alt="Simple parallax" />
+    <img src="../images/parallaxGround.gif" alt="Parallax on 4k texture" />
+    <img src="../images/skyboxReflection.gif" alt="Reflection" />
+  </div>
+
+
   <main>
+    <h2 id="contextTitle">🔬 Contexte</h2>
+    <p id="contextText">
+      Ce projet de recherche, intitulé <b>3D Visualisation of Molten Glass using Raymarching Technique</b>, a été réalisé en collaboration avec le <b>LORIA</b> (Laboratoire Lorrain de Recherche en Informatique et ses Applications) dans le cadre du programme <b>GPU Option – ISART Digital</b>.<br><br>
+      L’objectif était de concevoir un <b>moteur de rendu temps réel</b> capable de simuler le comportement visuel du <b>verre en fusion</b> sans recourir à une géométrie explicite.  
+      Le projet s’inscrit dans une démarche de <b>préservation des savoir-faire artisanaux</b> et d’<b>innovation technologique</b>, visant à fournir un outil immersif pour la formation à la verrerie en réalité augmentée.
+    </p>
+
+    <hr style="margin: 40px 0; border: 0; border-top: 1px solid #21262d;">
+
+    <h2 id="workTitle">🧩 Mon travail</h2>
     <ul>
-      <li><b>Moteur :</b> OpenGL</li>
-      <li><b>Langage :</b> C++ / GLSL</li>
-      <li><b>Objectif :</b> Apprentissage avancé du pipeline de rendu et des shaders</li>
+      <li id="workRendering">
+        💡 <b>Raymarching et rendu implicite :</b><br>
+        Développement complet du <b>pipeline de raymarching</b> sous <b>Vulkan</b>, basé sur des <b>Signed Distance Functions (SDF)</b> pour représenter des surfaces implicites déformables (sphères, tori, métaballes).  
+        Implémentation du <b>blending entre surfaces</b> pour reproduire la fusion organique du verre fondu et de son comportement visuel fluide.
+      </li>
+
+      <li id="workTransparency">
+        🌫️ <b>Transparence et réfraction :</b><br>
+        Intégration d’un modèle de <b>transmission et d’absorption lumineuse</b> simulant la translucidité du verre.  
+        Application d’effets de <b>réflexion, refraction et atténuation lumineuse</b> dépendant de l’indice de réfraction, permettant d’obtenir une apparence visuelle réaliste et dynamique.
+      </li>
+
+      <li id="workPerf">
+        ⚙️ <b>Optimisation GPU :</b><br>
+        Migration du pipeline depuis les <b>fragment shaders</b> vers les <b>compute shaders</b> pour un contrôle direct du calcul parallèle et une meilleure gestion mémoire.  
+        Amélioration des performances via une <b>partition spatiale hiérarchique (Binary Tree)</b> pour accélérer les évaluations de distance et réduire le nombre de calculs par rayon.
+      </li>
     </ul>
 
-    <p>
-      <a href="https://github.com/xarmy7/ParallaxMapping" target="_blank">Voir sur GitHub →</a>
+    <hr style="margin: 40px 0; border: 0; border-top: 1px solid #21262d;">
+
+    <h2 id="resultTitle">🚀 Résultats et perspectives</h2>
+    <p id="resultText">
+      Le moteur permet aujourd’hui de <b>visualiser en temps réel</b> des surfaces implicites semi-transparentes avec un éclairage <b>Phong + Fresnel</b> réaliste.  
+      Le passage aux compute shaders a amélioré les performances GPU de manière significative, tout en préparant l’intégration future de <b>données volumétriques</b> ou de <b>nuages de points 3D</b>.  
+      Ce travail pose les bases d’une <b>simulation de verre en fusion interactive</b>, ouvrant la voie à des applications dans la <b>formation artisanale</b> et la <b>recherche graphique avancée</b>.
+    </p>
+
+    <p style="margin-top: 30px;">
+      <a href="https://github.com/xarmy7/ParallaxMapping" target="_blank" id="gitLink">Voir sur GitHub →</a><br>
     </p>
   </main>
 
   <footer>
     © 2025 Maxence Retier — Portfolio créé avec GitHub.
   </footer>
-</body>
+  </body>
 </html>
