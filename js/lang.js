@@ -156,10 +156,10 @@ try {
   if (body && body.classList) {
     if (body.classList.contains("scout-page")) {
       pageTrans = t.scoutPage;
-      console.log("[lang] detected page by class: scout-page");
     } else if (body.classList.contains("raymarching-page")) {
       pageTrans = t.raymarchingPage;
-      console.log("[lang] detected page by class: raymarching-page");
+    } else if (body.classList.contains("parallax-page")) {
+      pageTrans = t.parallaxPage;
     }
   }
 } catch (e) {
@@ -186,11 +186,10 @@ if (!pageTrans) {
   const path = window.location.pathname.toLowerCase();
   if (path.includes("scout")) {
     pageTrans = t.scoutPage;
-    console.log("[lang] detected page by URL: scout");
   } else if (path.includes("raymarching")) {
     pageTrans = t.raymarchingPage;
-    console.log("[lang] detected page by URL: raymarching");
-  }
+  } else if (path.includes("parallax")) {
+    pageTrans = t.parallaxPage;
 }
 
 // 4) Appliquer si trouvé
@@ -203,15 +202,6 @@ if (pageTrans) {
 } else {
   console.log("[lang] no page-specific translation applied");
 }
-
-  // if (document.getElementById("projectTitle") && document.getElementById("contextText")) {
-  //   const pageTrans = t.scoutPage;
-  //   if (!pageTrans) return;
-  //   Object.keys(pageTrans).forEach(id => {
-  //     const el = document.getElementById(id);
-  //     if (el) el.innerHTML = pageTrans[id];
-  //   });
-  // }
 
   // Experiences
   const expItems = document.querySelectorAll("#exp li");
@@ -246,16 +236,3 @@ if (pageTrans) {
     });
   }
 });
-// document.addEventListener("DOMContentLoaded", () => {
-//   const langBtn = document.getElementById("langBtn");
-//   let currentLang = localStorage.getItem("lang") || "fr";
-
-//   applyLanguage(currentLang);
-
-//   if (langBtn) {
-//     langBtn.addEventListener("click", () => {
-//       currentLang = currentLang === "fr" ? "en" : "fr";
-//       applyLanguage(currentLang);
-//     });
-//   }
-// });
