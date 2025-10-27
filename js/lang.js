@@ -46,7 +46,20 @@ const translations = {
       resultText: "The engine now allows for <b>real-time visualization</b> of implicit semi-transparent surfaces with realistic <b>Phong + Fresnel</b> lighting. The switch to compute shaders has significantly improved GPU performance, while paving the way for the future integration of <b>volumetric data</b> or <b>3D point clouds</b>. This work lays the foundation for <b>interactive molten glass simulation</b>, paving the way for applications in <b>craft training</b> and <b>advanced graphics research</b>.",
       gitLink: "See on GithHub →",
       paperLink: "See the research paper →"
-    }
+    },
+    parallaxPage: {
+      contextTitle: "🔬 Context",
+      contextText: "",
+      workTitle: "🧩 My work",
+      workEngine: "",
+      workParallax: "",
+      workDebug: "",
+      workPerf: "",
+      resultTitle: "🚀 Result and prospects",
+      resultText: "",
+      resultText2: "",
+      gitLink: "See on GitHub →"
+    {
   },
 
   fr: {
@@ -93,6 +106,20 @@ const translations = {
       resultText: "Le moteur permet aujourd’hui de <b>visualiser en temps réel</b> des surfaces implicites semi-transparentes avec un éclairage <b>Phong + Fresnel</b> réaliste. Le passage aux compute shaders a amélioré les performances GPU de manière significative, tout en préparant l’intégration future de <b>données volumétriques</b> ou de <b>nuages de points 3D</b>. Ce travail pose les bases d’une <b>simulation de verre en fusion interactive</b>, ouvrant la voie à des applications dans la <b>formation artisanale</b> et la <b>recherche graphique avancée</b>.",
       gitLink: "Voir sur GithHub →",
       paperLink: "Voir le document de recherche →"
+    },
+    parallaxPage: {
+      contextTitle: "🔬 Contexte",
+      contextText: "Le projet Parallax Mapping est une expérimentation graphique développée à l’aide d’un moteur OpenGL conçu entièrement from scratch. L’objectif principal était de comprendre et d’implémenter la technique du Parallax Mapping, un effet visuel utilisé dans de nombreux jeux vidéo pour simuler de la profondeur sur des surfaces planes, sans recourir à de la vraie géométrie 3D.",
+      contentText: "Le projet inclut également une interface ImGui, permettant à l’utilisateur de manipuler les paramètres du rendu en temps réel (position de la caméra, déplacement de l’objet, hauteur du relief, etc.).",
+      workTitle: "🧩 Mon travail",
+      workEngine: "🔧 <b>Création d’un moteur OpenGL minimaliste</b>, intégrant la gestion des shaders, des textures et de la caméra.",
+      workParallax: "🎨 <b> Implémentation complète du Parallax Mapping :</b><br><p class='indent'>• Calcul du décalage des coordonnées UV selon la hauteur du relief.</p> <p class='indent'>• Utilisation d’une Height Map pour générer la profondeur perçue.</p> <p class='indent'>• Réglage dynamique du facteur de height scale via l’interface ImGui.</p> ",
+      workDebug: "🧠 <b>Interface utilisateur interactive (ImGui) :</b><br><p class='indent'>• Contrôles caméra (Z, Q, S, D, Espace, Ctrl droit, clic droit).</p> <p class='indent'>• Ajustement du relief en direct pour observer l’effet du Parallax Mapping sous différents angles.</p> ",
+      workPerf: "⚙️ <b>Organisation et structuration du code </b>pour séparer la logique du rendu, la gestion de la fenêtre et les shaders GLSL.",
+      resultTitle: "🚀 Resultats et perspectives",
+      resultText: "Ce projet m’a permis de consolider ma compréhension du pipeline graphique OpenGL et de l’écriture de shaders GLSL.J’ai approfondi ma maîtrise du mapping de textures avancé, de la manipulation des coordonnées tangentes, et de l’intégration d’outils de debug graphique comme ImGui.",
+      resultText2: "Le rendu final offre un effet de relief réaliste, contrôlable en temps réel, tout en maintenant de bonnes performances grâce à une gestion efficace du shader et des ressources GPU.",
+      gitLink: "Voir sur GitHub →"
     }
   }
 };
