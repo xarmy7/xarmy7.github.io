@@ -147,62 +147,64 @@ function applyLanguage(lang) {
   if (document.getElementById("cvBtn")) {
     document.getElementById("cvBtn").textContent = t.cvBtn;
   }
-  // Detect specific project pages (robuste)
-let pageTrans = null;
+  
+  // 1) Détection par classe body (ex: <body class="raymarching-page">)
+  let pageTrans = null;
+  try {
+    const body = document.body;
+    if (body && body.classList) {
+      if (body.classList.contains("scout-page")) {
+        pageTrans = t.scoutPage;
+      } else if (body.classList.contains("raymarching-page")) {
+        pageTrans = t.raymarchingPage;
+      } else if (body.classList.contains("parallax-page")) {
+        pageTrans = t.parallaxPage;
+      }
+    }
+  } catch (e) {
+    console.warn("[lang] error reading body.classList", e);
+  }
 
-// 1) Détection par classe body (ex: <body class="raymarching-page">)
-try {
-  const body = document.body;
-  if (body && body.classList) {
-    if (body.classList.contains("scout-page")) {
+  // 2) Détection par attribut data-page (ex: <body data-page="raymarching">)
+  if (!pageTrans) {
+    const pageAttr = document.body?.dataset?.page || null;
+    if (pageAttr) {
+      const key = pageAttr.trim().toLowerCase();
+      if (key === "scout" && t.scoutPage) {
+        pageTrans = t.scoutPage;
+        console.log("[lang] detected page by data-page: scout");
+      } else if (key === "raymarching" && t.raymarchingPage) {
+        pageTrans = t.raymarchingPage;
+        console.log("[lang] detected page by data-page: raymarching");
+      } else if (key === "parallax" && t.parallaxPage) {
+        pageTrans = t.parallaxPage;
+        console.log("[lang] detected page by data-page: parallax");
+      }
+    }
+  }
+
+  // 3) Détection par URL (ex: '/projects/raymarching.html' ou '/raymarching/')
+  if (!pageTrans) {
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes("scout")) {
       pageTrans = t.scoutPage;
-    } else if (body.classList.contains("raymarching-page")) {
+    } else if (path.includes("raymarching")) {
       pageTrans = t.raymarchingPage;
-    } else if (body.classList.contains("parallax-page")) {
+    } else if (path.includes("parallax")) {
       pageTrans = t.parallaxPage;
     }
   }
-} catch (e) {
-  console.warn("[lang] error reading body.classList", e);
-}
 
-// 2) Détection par attribut data-page (ex: <body data-page="raymarching">)
-if (!pageTrans) {
-  const pageAttr = document.body && document.body.dataset ? document.body.dataset.page : null;
-  if (pageAttr) {
-    const key = pageAttr.trim().toLowerCase();
-    if (key === "scout" && t.scoutPage) {
-      pageTrans = t.scoutPage;
-      console.log("[lang] detected page by data-page: scout");
-    } else if (key === "raymarching" && t.raymarchingPage) {
-      pageTrans = t.raymarchingPage;
-      console.log("[lang] detected page by data-page: raymarching");
-    } else if (key === "parallax" && t.parallaxPage) {
-        pageTrans = t.parallaxPage;
+  // 4) Appliquer si trouvé
+  if (pageTrans) {
+    Object.keys(pageTrans).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = pageTrans[id];
+      else console.warn(`[lang] element with id "${id}" not found on page`);
+    });
+  } else {
+    console.log("[lang] no page-specific translation applied");
   }
-}
-
-// 3) Détection par URL (ex: '/projects/raymarching.html' ou '/raymarching/')
-if (!pageTrans) {
-  const path = window.location.pathname.toLowerCase();
-  if (path.includes("scout")) {
-    pageTrans = t.scoutPage;
-  } else if (path.includes("raymarching")) {
-    pageTrans = t.raymarchingPage;
-  } else if (path.includes("parallax")) {
-    pageTrans = t.parallaxPage;
-}
-
-// 4) Appliquer si trouvé
-if (pageTrans) {
-  Object.keys(pageTrans).forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.innerHTML = pageTrans[id];
-    else console.warn(`[lang] element with id "${id}" not found on page`);
-  });
-} else {
-  console.log("[lang] no page-specific translation applied");
-}
 
   // Experiences
   const expItems = document.querySelectorAll("#exp li");
