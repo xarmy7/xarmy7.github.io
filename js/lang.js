@@ -49,16 +49,17 @@ const translations = {
     },
     parallaxPage: {
       contextTitle: "🔬 Context",
-      contextText: "",
-      workTitle: "🧩 My work",
-      workEngine: "",
-      workParallax: "",
-      workDebug: "",
-      workPerf: "",
-      resultTitle: "🚀 Result and prospects",
-      resultText: "",
-      resultText2: "",
-      gitLink: "See on GitHub →"
+      contextText: "The <b>Parallax Mapping</b> project is a graphical experiment developed using a fully custom <b>OpenGL engine</b> built from scratch. The main goal was to understand and implement the <b>Parallax Mapping</b> technique — a visual effect used in many video games to simulate <b>depth on flat surfaces</b> without relying on real 3D geometry.",
+      contentText: "The project also includes an <b>ImGui interface</b>, allowing the user to adjust <b>render parameters</b> in real time (camera position, object movement, relief height, etc.).",
+      workTitle: "🧩 My Work",
+      workEngine: "🔧 <b>Creation of a minimalist OpenGL engine</b>, integrating <b>shader management</b>, <b>texture handling</b>, and <b>camera control</b>.",
+      workParallax: "🎨 <b>Full implementation of Parallax Mapping:</b><br><p class='indent'>• Computation of <b>UV coordinate offsets</b> based on height values.</p><p class='indent'>• Use of a <b>Height Map</b> to generate perceived depth.</p><p class='indent'>• Dynamic adjustment of the <b>height scale factor</b> through the ImGui interface.</p>",
+      workDebug: "🧠 <b>Interactive user interface (ImGui):</b><br><p class='indent'>• <b>Camera controls</b> (W, A, S, D, Space, Right Ctrl, right click).</p><p class='indent'>• <b>Real-time height adjustment</b> to observe the Parallax Mapping effect from different angles.</p>",
+      workPerf: "⚙️ <b>Code organization and structure</b> to separate rendering logic, window management, and <b>GLSL shaders</b>.",
+      resultTitle: "🚀 Results and Perspectives",
+      resultText: "This project helped me strengthen my understanding of the <b>OpenGL graphics pipeline</b> and the development of <b>GLSL shaders</b>. I deepened my knowledge of <b>advanced texture mapping</b>, <b>tangent-space manipulation</b>, and the integration of <b>debugging tools</b> like ImGui.",
+      resultText2: "The final render provides a <b>realistic depth effect</b>, controllable in real time, while maintaining <b>strong performance</b> thanks to efficient shader and GPU resource management.",
+      gitLink: "View on GitHub →"
     }
   },
 
@@ -109,16 +110,16 @@ const translations = {
     },
     parallaxPage: {
       contextTitle: "🔬 Contexte",
-      contextText: "Le projet Parallax Mapping est une expérimentation graphique développée à l’aide d’un moteur OpenGL conçu entièrement from scratch. L’objectif principal était de comprendre et d’implémenter la technique du Parallax Mapping, un effet visuel utilisé dans de nombreux jeux vidéo pour simuler de la profondeur sur des surfaces planes, sans recourir à de la vraie géométrie 3D.",
-      contentText: "Le projet inclut également une interface ImGui, permettant à l’utilisateur de manipuler les paramètres du rendu en temps réel (position de la caméra, déplacement de l’objet, hauteur du relief, etc.).",
+      contextText: "Le projet <b>Parallax Mapping</b> est une expérimentation graphique développée à l’aide d’un moteur <b>OpenGL</b> conçu entièrement from scratch. L’objectif principal était de comprendre et d’implémenter la technique du <b>Parallax Mapping</b>, un effet visuel utilisé dans de nombreux jeux vidéo pour simuler de la <b>profondeur sur des surfaces planes</b>, sans recourir à de la vraie géométrie 3D.",
+      contentText: "Le projet inclut également une interface <b>ImGui</b>, permettant à l’utilisateur de manipuler les <b>paramètres du rendu</b> en temps réel (position de la caméra, déplacement de l’objet, hauteur du relief, etc.).",
       workTitle: "🧩 Mon travail",
-      workEngine: "🔧 <b>Création d’un moteur OpenGL minimaliste</b>, intégrant la gestion des shaders, des textures et de la caméra.",
-      workParallax: "🎨 <b> Implémentation complète du Parallax Mapping :</b><br><p class='indent'>• Calcul du décalage des coordonnées UV selon la hauteur du relief.</p> <p class='indent'>• Utilisation d’une Height Map pour générer la profondeur perçue.</p> <p class='indent'>• Réglage dynamique du facteur de height scale via l’interface ImGui.</p> ",
-      workDebug: "🧠 <b>Interface utilisateur interactive (ImGui) :</b><br><p class='indent'>• Contrôles caméra (Z, Q, S, D, Espace, Ctrl droit, clic droit).</p> <p class='indent'>• Ajustement du relief en direct pour observer l’effet du Parallax Mapping sous différents angles.</p> ",
-      workPerf: "⚙️ <b>Organisation et structuration du code </b>pour séparer la logique du rendu, la gestion de la fenêtre et les shaders GLSL.",
-      resultTitle: "🚀 Resultats et perspectives",
-      resultText: "Ce projet m’a permis de consolider ma compréhension du pipeline graphique OpenGL et de l’écriture de shaders GLSL.J’ai approfondi ma maîtrise du mapping de textures avancé, de la manipulation des coordonnées tangentes, et de l’intégration d’outils de debug graphique comme ImGui.",
-      resultText2: "Le rendu final offre un effet de relief réaliste, contrôlable en temps réel, tout en maintenant de bonnes performances grâce à une gestion efficace du shader et des ressources GPU.",
+      workEngine: "🔧 <b>Création d’un moteur OpenGL minimaliste</b>, intégrant la gestion des <b>shaders</b>, des <b>textures</b> et de la <b>caméra</b>.",
+      workParallax: "🎨 <b>Implémentation complète du Parallax Mapping :</b><br><p class='indent'>• Calcul du <b>décalage des coordonnées UV</b> selon la hauteur du relief.</p><p class='indent'>• Utilisation d’une <b>Height Map</b> pour générer la profondeur perçue.</p><p class='indent'>• Réglage dynamique du <b>facteur de height scale</b> via l’interface ImGui.</p>",
+      workDebug: "🧠 <b>Interface utilisateur interactive (ImGui) :</b><br><p class='indent'>• <b>Contrôles caméra</b> (Z, Q, S, D, Espace, Ctrl droit, clic droit).</p><p class='indent'>• <b>Ajustement du relief en direct</b> pour observer l’effet du Parallax Mapping sous différents angles.</p>",
+      workPerf: "⚙️ <b>Organisation et structuration du code</b> pour séparer la logique du rendu, la gestion de la fenêtre et les <b>shaders GLSL</b>.",
+      resultTitle: "🚀 Résultats et perspectives",
+      resultText: "Ce projet m’a permis de consolider ma compréhension du <b>pipeline graphique OpenGL</b> et de l’écriture de <b>shaders GLSL</b>. J’ai approfondi ma maîtrise du <b>mapping de textures avancé</b>, de la <b>manipulation des coordonnées tangentes</b> et de l’intégration d’outils de <b>debug graphique</b> comme ImGui.",
+      resultText2: "Le rendu final offre un <b>effet de relief réaliste</b>, contrôlable en temps réel, tout en maintenant de <b>bonnes performances</b> grâce à une gestion efficace du shader et des ressources GPU.",
       gitLink: "Voir sur GitHub →"
     }
   }
