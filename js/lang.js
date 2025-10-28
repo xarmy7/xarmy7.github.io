@@ -59,8 +59,7 @@ const translations = {
       resultText: "",
       resultText2: "",
       gitLink: "See on GitHub →"
-    {
-  },
+    },
 
   fr: {
     bio: "Passionné par le développement de jeux vidéo, diplômé d’Isart Digital en Game Programming, je dispose de deux ans d’expérience sur des projets immersifs en 3D, VR et AR. J’aime concevoir des expériences innovantes et fun à jouer, où la technique rencontre la créativité.",
