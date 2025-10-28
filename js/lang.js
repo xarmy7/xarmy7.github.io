@@ -177,7 +177,8 @@ if (!pageTrans) {
     } else if (key === "raymarching" && t.raymarchingPage) {
       pageTrans = t.raymarchingPage;
       console.log("[lang] detected page by data-page: raymarching");
-    }
+    } else if (key === "parallax" && t.parallaxPage) {
+        pageTrans = t.parallaxPage;
   }
 }
 
