@@ -33,7 +33,9 @@
       cursor: not-allowed;
       pointer-events: none;
       text-decoration: none;
-      border-radius: 12px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: inline-block;
       opacity: 0.8;
     }
 
