@@ -26,6 +26,21 @@
     a { color: #58a6ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* === DISABLED LINK === */
+    a.disabled {
+      background-color: rgb(90, 96, 105);
+      color: #000;
+      cursor: not-allowed;
+      pointer-events: none;
+      text-decoration: none;
+      border-radius: 12px;
+      opacity: 0.8;
+    }
+
+    a.disabled:hover {
+      text-decoration: none;
+    }
+
     /* === LANGUAGE BUTTON === */
     #langBtn {
       position: fixed;
@@ -125,29 +140,6 @@
       color: #c9d1d9;
       line-height: 1.5;
       font-size: 0.95rem;
-    }
-
-    /* === PROJECT LINKS (BASE) === */
-    .project a {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 12px;
-      line-height: 1;
-    }
-
-    /* === PROJECT DISABLED LINK === */
-    .project a.disabled {
-      background-color: rgb(90, 96, 105);
-      color: #000;
-      cursor: not-allowed;
-      pointer-events: none;
-      text-decoration: none;
-      border-radius: 8px;
-      opacity: 0.8;
-    }
-
-    .project a.disabled:hover {
-      text-decoration: none;
     }
 
     ul {
