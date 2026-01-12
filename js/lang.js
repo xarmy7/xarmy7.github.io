@@ -212,7 +212,7 @@ function applyLanguage(lang) {
   expItems.forEach((li, i) => { if (t.exp[i]) li.innerHTML = t.exp[i]; });
 
   // Projects
-  const projectItems = document.querySelectorAll(".project", ".disabled");
+  const projectItems = document.querySelectorAll(".project, .disabled");
   projectItems.forEach(project => {
     const id = project.dataset.id ? project.dataset.id.toLowerCase() : null;
     if (id && t.projects[id]) {
